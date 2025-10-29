@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spike it</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/spiikeit fitness/style.css">
+    <style>
+         .text-white {
+            color: var(--text-light) !important;
+        }
+        .text-white:hover {
+            color: var(--accent-primary) !important;
+        }
+
+
+         .hero-section {
+            height: 80vh;
+            background: url('/images/unnamed.jpg ') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+
+        /* Search input styling */
+        .form-control-sm {
+            background-color: var(--secondary-bg);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+        }
+        .form-control-sm::placeholder {
+            color: var(--text-muted);
+        }
+        .form-control-sm:focus {
+            background-color: var(--secondary-bg);
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25); /* Accent primary shadow */
+            color: var(--text-light);
+        }
+
+        /* Bootstrap utility overrides for dark theme coherence */
+        .bg-dark {
+            background-color: var(--primary-bg) !important;
+        }
+        .text-primary {
+            color: var(--accent-primary) !important;
+        }
+        .btn-primary {
+            background-color: var(--accent-primary) !important;
+            border-color: var(--accent-primary) !important;
+            color: var(--primary-bg) !important;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb !important; /* Slightly darker accent */
+            border-color: #2563eb !important;
+        }
+        .btn-outline-light {
+            color: var(--text-light);
+            border-color: var(--text-muted);
+        }
+        .btn-outline-light:hover {
+            color: var(--primary-bg);
+            background-color: var(--text-light);
+            border-color: var(--text-light);
+        }
+        
+        /* --- Card & List Styling (Product/Cart Views) --- */
+        .card {
+            background-color: var(--secondary-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+        }
+        .card-img-top {
+            background-color: #111827 !important; /* Slightly darker than card for contrast */
+        }
+        
+        .list-group-item {
+            background-color: var(--secondary-bg);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        .card-header {
+            background-color: var(--accent-primary) !important;
+            color: var(--primary-bg) !important;
+        }
+        .custom-alert {
+            position: fixed;
+            top: 85px; /* Below navbar and offers bar */
+            right: 20px;
+            z-index: 2000;
+            background-color: var(--secondary-bg);
+            color: var(--text-light);
+            border-color: var(--accent-primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .custom-alert .btn-close {
+            filter: invert(1); /* Ensure close button is visible on dark alert */
+        }
+        
+        /* --- Hero Banner Styling --- */
+        .hero-banner {
+            padding-top: 200px;
+            padding-bottom: 150px;
+            min-height: 70vh;
+            overflow: hidden;
+            margin-top: 38px;
+        }
+
+       
+
+        .subscription-form .form-control {
+            border-radius: 50rem 0 0 50rem !important;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-bg);
+        }
+
+        .subscription-form .btn-light {
+            background-color: var(--text-light);
+            color: var(--primary-bg);
+            border-radius: 0 50rem 50rem 0 !important;
+            font-weight: 700;
+            transition: background-color 0.2s;
+        }
+
+        .subscription-form .btn-light:hover {
+            background-color: var(--accent-primary);
+            color: var(--text-light);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Top Offers Bar -->
+    <div class="offers-bar">
+        <span class="offer-text">
+            🔥 Offers | 30% Off! On Minimum Purchase of ₹5000 | 15% Off! On Minimum Purchase of ₹2500
+        </span>
+    </div>
+
+    <!-- Header -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark custom-navbar py-3">
+    <div class="container">
+      <a class="navbar-brand fs-3" href="#">SPIKEIT</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul style="margin-top: 30px;" class="navbar-nav me-3">
+          <li class="nav-item"><a class="nav-link active" href="/spiikeit fitness/index.html">Home</a></li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarSportsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Shop by Sports
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarSportsDropdown">
+                <li><a class="dropdown-item" href="/spiikeit fitness/categories/football.html">Football</a></li>
+              <li><a class="dropdown-item" href="/spiikeit fitness/categories/basketball.html">Basketball</a></li>
+              <li><a class="dropdown-item" href="/spiikeit fitness/categories/cricket.html">Cricket</a></li>
+              <li><a class="dropdown-item" href="/spiikeit fitness/categories/volleyball.html">Badminton</a></li>
+                <li><hr class="dropdown-divider"></li>
+
+            </ul>
+          </li>
+           <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/new-arrival.html">New Arrivals</a></li>
+          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/accessories.html">Accessories</a></li>
+          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/appearels.html">Apparels</a></li>
+          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/about-us.html">About us</a></li>
+
+        </ul>
+
+        <form class="d-flex me-3">
+          <input class="form-control form-control-sm" type="search" placeholder="Search products">
+        </form>
+
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="text-white me-3"><i class="bi bi-person"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-heart"></i></a>
+           <a href="#" class="text-white" onclick="switchView('cart')" title="Cart">
+                        <i class="bi bi-cart3"></i>
+                        <span id="cart-badge" class="badge rounded-pill bg-danger position-absolute translate-middle-y" style="font-size: 0.7em; top: 50%;">0</span>
+                    </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="/spiikeit fitness/images/logo.png" alt="Spike It Logo">
+      <h1>Welcome to Spike It Sports</h1>
+      <p class="mt-2">Gear Up. Game On. Perform Like a Pro.</p>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- Alert Container for success messages -->
+    <div id="alert-container"></div>
+
+    <!-- Main Content Container (Product/Cart Views) -->
+    <div class="container-xl my-5 p-4 bg-[var(--dark-card)] rounded-xl shadow-2xl" style="padding-top: 150px !important;">
+
+        <!-- Product View -->
+        <div id="product-view" data-view="products">
+            <h1 class="text-3xl font-bold mb-5 text-[var(--dark-text)] border-b pb-2 border-gray-700">All Products (14 Items)</h1>
+            <div id="product-list" class="row">
+                <!-- Product cards will be rendered here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Cart View -->
+        <div id="cart-view" data-view="cart" style="display: none;">
+            <h1 class="text-3xl font-bold mb-5 text-[var(--dark-text)] border-b pb-2 border-gray-700">Your Shopping Cart</h1>
+            <div id="cart-content" class="row g-4">
+                <!-- Cart items and summary will be rendered here by JavaScript -->
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- ************************************ -->
+    <!-- START: NEW SECTIONS ADDED PER REQUEST -->
+    <!-- ************************************ -->
+
+    <!-- New Arrivals Banner -->
+    <section class="container-xl my-5 p-4 rounded-xl shadow-2xl bg-[var(--accent-primary)]">
+        <div class="row align-items-center text-[var(--primary-bg)] text-center text-lg-start">
+            <div class="col-lg-8">
+                <h2 class="display-5 fw-bolder mb-2"><i class="bi bi-star-fill me-3"></i> FRESH OFF THE FIELD!</h2>
+                <p class="lead fw-light mb-lg-0">Discover the latest performance gear and limited edition drops. Elevate your game today.</p>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <a href="#" 
+                    class="btn btn-outline-dark btn-lg rounded-full px-5 py-3 mt-3 mt-lg-0 fw-bold border-2 text-[var(--primary-bg)] hover:bg-[var(--primary-bg)] hover:text-[var(--accent-primary)] border-[var(--primary-bg)]"
+                    style="min-width: 180px;"
+                >
+                    SHOP NOW
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse by Category Section (T-Shirts, Tracks, Balls, Shoes, Accessories) -->
+    <div class="container-xl my-5 p-4 bg-[var(--dark-card)] rounded-xl shadow-2xl">
+        <h2 class="text-3xl font-bold mb-5 text-[var(--dark-text)] border-b pb-2 border-gray-700">Browse By Category</h2>
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="card category-card text-decoration-none text-center h-100 transform transition-transform hover:scale-[1.05] duration-300">
+                    <div class="card-body p-4">
+                        <i class="fas fa-tshirt display-4 mb-3 text-primary"></i>
+                        <h5 class="card-title fw-bold text-light">T-Shirts</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="card category-card text-decoration-none text-center h-100 transform transition-transform hover:scale-[1.05] duration-300">
+                    <div class="card-body p-4">
+                        <i class="fas fa-running display-4 mb-3 text-primary"></i>
+                        <h5 class="card-title fw-bold text-light">Trackwear</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="card category-card text-decoration-none text-center h-100 transform transition-transform hover:scale-[1.05] duration-300">
+                    <div class="card-body p-4">
+                        <i class="fas fa-futbol display-4 mb-3 text-primary"></i>
+                        <h5 class="card-title fw-bold text-light">Balls</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="card category-card text-decoration-none text-center h-100 transform transition-transform hover:scale-[1.05] duration-300">
+                    <div class="card-body p-4">
+                        <i class="fas fa-shoe-prints display-4 mb-3 text-primary"></i>
+                        <h5 class="card-title fw-bold text-light">Footwear</h5>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-6 col-md-4 col-lg-2">
+                <a href="#" class="card category-card text-decoration-none text-center h-100 transform transition-transform hover:scale-[1.05] duration-300">
+                    <div class="card-body p-4">
+                        <i class="fas fa-medal display-4 mb-3 text-primary"></i>
+                        <h5 class="card-title fw-bold text-light">Accessories</h5>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- ************************************ -->
+    <!-- END: NEW SECTIONS ADDED PER REQUEST -->
+    <!-- ************************************ -->
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        // --- GLOBAL STATE & DATA ---
+        let cart = []; // Format: [{ id: number, name: string, price: number, quantity: number, image: string }]
+        const TAX_RATE = 0.05; // 5% tax
+
+        // EXPANDED PRODUCT LIST (14 ITEMS)
+        const FOOTBALL_PRODUCTS = [
+            { id: 201, name: "Equator Football (Size 5)", price: 1019.00, originalPrice: 1019, drop: 0, category: "Ball", image: "https://placehold.co/150x150/3b82f6/1f2937?text=Pro+Ball" }, 
+            { id: 202, name: "Home Play Football Ball (Size 3)", price: 170.00, originalPrice: 170, drop: 0, category: "Ball", image: "https://placehold.co/150x150/ef4444/1f2937?text=Junior+Ball" }, 
+            { id: 203, name: "Pro Training Jersey", price: 650.00, originalPrice: 650, drop: 0, category: "Apparel", image: "https://placehold.co/150x150/10b981/1f2937?text=Jersey" }, 
+            { id: 204, name: "Goalkeeper Gloves Elite", price: 1250.00, originalPrice: 1250, drop: 0, category: "Accessories", image: "https://placehold.co/150x150/6b7280/1f2937?text=Gloves" }, 
+            { id: 205, name: "Speed Training Cones (Set of 10)", price: 399.00, originalPrice: 399, drop: 0, category: "Training", image: "https://placehold.co/150x150/f59e0b/1f2937?text=Cones" }, 
+            { id: 206, name: "Compression Socks (Pair)", price: 299.00, originalPrice: 299, drop: 0, category: "Apparel", image: "https://placehold.co/150x150/a855f7/1f2937?text=Socks" }, 
+            // 8 new products added to reach 14
+            { id: 207, name: "Pro Shinguard Set", price: 549.00, originalPrice: 549, drop: 0, category: "Accessories", image: "https://placehold.co/150x150/f97316/1f2937?text=Shinguards" },
+            { id: 208, name: "Hydration Bottle 1L", price: 199.00, originalPrice: 199, drop: 0, category: "Training", image: "https://placehold.co/150x150/06b6d4/1f2937?text=Water+Bottle" },
+            { id: 209, name: "Team Training Bib (Set of 6)", price: 899.00, originalPrice: 899, drop: 0, category: "Training", image: "https://placehold.co/150x150/ec4899/1f2937?text=Training+Bibs" },
+            { id: 210, name: "Stadium Backpack (Large)", price: 1599.00, originalPrice: 1599, drop: 0, category: "Bags", image: "https://placehold.co/150x150/374151/e5e7eb?text=Backpack" },
+            { id: 211, name: "Signature Cleats (Size 9)", price: 2800.00, originalPrice: 2800, drop: 0, category: "Footwear", image: "https://placehold.co/150x150/14b8a6/1f2937?text=Cleats" },
+            { id: 212, name: "Refree Whistle Pro", price: 249.00, originalPrice: 249, drop: 0, category: "Accessories", image: "https://placehold.co/150x150/eab308/1f2937?text=Whistle" },
+            { id: 213, name: "Puma Power Ball (Size 5)", price: 1399.00, originalPrice: 1399, drop: 0, category: "Ball", image: "https://placehold.co/150x150/d946ef/1f2937?text=Power+Ball" },
+            { id: 214, name: "Padded Compression Shorts", price: 799.00, originalPrice: 799, drop: 0, category: "Apparel", image: "https://placehold.co/150x150/60a5fa/1f2937?text=Padded+Shorts" },
+        ];
+
+
+        // --- UTILITY FUNCTIONS ---
+
+        /**
+         * Shows a temporary success alert using custom styling.
+         * @param {string} message - The message to display.
+         */
+        function showAlert(message) {
+            const $alertContainer = $('#alert-container');
+            // Prevent multiple alerts from stacking too fast by removing older ones
+            $alertContainer.empty(); 
+            const alertHtml = `
+                <!-- Used custom-alert class defined in the style block -->
+                <div class="custom-alert alert alert-success alert-dismissible fade show" role="alert">
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+            $alertContainer.append(alertHtml);
+            setTimeout(() => {
+                // Find and close the alert after 3 seconds
+                $alertContainer.find('.alert').alert('close');
+            }, 3000);
+        }
+
+        /**
+         * Updates the cart state and re-renders the cart badge.
+         */
+        function updateCartBadge() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const $badge = $('#cart-badge');
+
+            $badge.text(totalItems);
+
+            if (totalItems > 0) {
+                $badge.show();
+            } else {
+                $badge.hide();
+            }
+        }
+
+        /**
+         * Adds a product to the cart or increments its quantity.
+         * @param {number} productId - The ID of the product.
+         */
+        function addToCart(productId) {
+            const product = FOOTBALL_PRODUCTS.find(p => p.id === productId); 
+            if (!product) {
+                console.error("Product not found:", productId);
+                return;
+            }
+
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+
+            updateCartBadge();
+            showAlert(`<i class="bi bi-check-circle-fill me-1"></i> Added ${product.name} to cart!`);
+        }
+
+        /**
+         * Updates the quantity of an item in the cart.
+         * @param {number} productId - The ID of the product.
+         * @param {number} newQuantity - The new quantity.
+         */
+        function updateQuantity(productId, newQuantity) {
+            if (newQuantity < 1) return removeFromCart(productId);
+
+            const item = cart.find(i => i.id === productId);
+            if (item) {
+                item.quantity = newQuantity;
+                renderCart(); // Re-render cart on change
+            }
+        }
+
+        /**
+         * Removes an item from the cart.
+         * @param {number} productId - The ID of the product.
+         */
+        function removeFromCart(productId) {
+            const item = cart.find(item => item.id === productId);
+            if(item) {
+                showAlert(`<i class="bi bi-x-circle-fill me-1"></i> Removed ${item.name} from cart.`);
+            }
+            cart = cart.filter(item => item.id !== productId);
+            updateCartBadge();
+            renderCart(); // Re-render cart on removal
+        }
+
+        /**
+         * Switches the application view between product list and cart.
+         * @param {string} targetView - 'products' or 'cart'
+         */
+        function switchView(targetView) {
+            // Update active navigation state
+            // The Home link acts as the product view target
+            $('.nav-item .nav-link').removeClass('active');
+            if (targetView === 'products') {
+                 $('.nav-item a:contains("Home")').addClass('active');
+            }
+            
+            // Show/Hide views
+            $('[data-view]').hide();
+            $(`[data-view="${targetView}"]`).fadeIn(300);
+
+            if (targetView === 'cart') {
+                renderCart();
+            } else if (targetView === 'products') {
+                renderProducts(); // Ensure products are rendered when switching back
+            }
+        }
+
+        /**
+         * Renders the cart contents and summary to the cart-view div.
+         */
+        function renderCart() {
+            const $cartContent = $('#cart-content');
+            $cartContent.empty(); // Clear existing content
+
+            if (cart.length === 0) {
+                const emptyCartHtml = `
+                    <div class="col-12">
+                        <div class="p-5 text-center bg-[var(--dark-card)] rounded-xl shadow-2xl max-w-lg mx-auto mt-4 border border-gray-700">
+                            <i class="bi bi-cart-x display-4 text-primary mb-3"></i>
+                            <h2 class="h3 fw-bold text-light">Your Cart is Empty</h2>
+                            <p class="text-muted mt-2">Time to fill it up with some great gear!</p>
+                            <!-- Updated button styling for dark mode -->
+                            <button onclick="switchView('products')" class="btn btn-primary mt-4 py-2 px-4 rounded-full shadow-lg hover:shadow-xl transition duration-300">
+                                <i class="bi bi-arrow-left me-2"></i> Continue Shopping
+                            </button>
+                        </div>
+                    </div>
+                `;
+                $cartContent.html(emptyCartHtml);
+                return;
+            }
+
+            // Calculate Totals
+            const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            const tax = subtotal * TAX_RATE;
+            const total = subtotal + tax;
+            
+            // --- Cart Items List HTML (Left Column) ---
+            let itemsListHtml = '<div class="col-lg-8">';
+            itemsListHtml += '<div class="list-group shadow-2xl rounded-xl overflow-hidden">';
+            
+            cart.forEach(item => {
+                const itemTotal = (item.price * item.quantity).toFixed(2);
+                const imgSrc = item.image; 
+                
+                itemsListHtml += `
+                    <!-- Use list-group-item which is styled in custom CSS for dark mode -->
+                    <div class="list-group-item d-flex align-items-center p-4">
+                        <img src="${imgSrc}" alt="${item.name}" class="rounded-lg me-4 border border-gray-700 shadow-sm" style="width: 100px; height: 100px; object-fit: cover;" onerror="this.onerror=null;this.src='https://placehold.co/100x100/${item.id}ff00/ffffff?text=Item'"/>
+                        
+                        <div class="flex-grow-1 min-w-0">
+                            <h5 class="mb-1 fw-bold text-light text-truncate">${item.name}</h5>
+                            <!-- text-primary is defined in CSS to be the accent color -->
+                            <p class="mb-1 text-primary fw-semibold">₹ ${item.price.toFixed(2)}</p>
+                            <small class="text-muted">Total: <span class="fw-bold">₹ ${itemTotal}</span></small>
+                        </div>
+
+                        <!-- Quantity controls -->
+                        <div class="d-flex align-items-center mx-3 my-2 flex-shrink-0">
+                            <button 
+                                data-product-id="${item.id}" 
+                                data-action="decrement"
+                                class="btn btn-outline-light btn-sm cart-qty-btn rounded-start-lg transition hover:bg-gray-700"
+                                ${item.quantity <= 1 ? 'disabled' : ''}
+                                style="width: 35px; height: 35px;"
+                            >
+                                <i class="bi bi-dash"></i>
+                            </button>
+                            <!-- Ensure the span text is readable -->
+                            <span class="mx-0 fw-bold bg-[var(--dark-card)] border border-light text-light" style="width: 40px; text-align: center; line-height: 35px; height: 35px;">${item.quantity}</span>
+                            <button 
+                                data-product-id="${item.id}" 
+                                data-action="increment"
+                                class="btn btn-outline-light btn-sm cart-qty-btn rounded-end-lg transition hover:bg-gray-700"
+                                style="width: 35px; height: 35px;"
+                            >
+                                <i class="bi bi-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Remove button -->
+                        <button 
+                            data-product-id="${item.id}" 
+                            data-action="remove"
+                            class="btn btn-outline-danger btn-sm cart-qty-btn ms-3 flex-shrink-0 rounded-circle shadow-sm"
+                            aria-label="Remove item"
+                            style="width: 40px; height: 40px;"
+                        >
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                `;
+            });
+            itemsListHtml += '</div></div>';
+
+            // --- Order Summary HTML (Right Column) ---
+            const summaryHtml = `
+                <div class="col-lg-4">
+                    <!-- Card uses card style from custom CSS for dark mode -->
+                    <div class="card shadow-2xl rounded-xl sticky-top" style="top: 90px;">
+                        <!-- card-header bg-primary is styled in custom CSS to use accent-primary -->
+                        <div class="card-header fw-bold h5 rounded-t-xl">Order Summary</div>
+                        <div class="card-body p-4">
+                            <ul class="list-group list-group-flush mb-3">
+                                <!-- list-group-item is styled in custom CSS for dark mode -->
+                                <li class="list-group-item d-flex justify-content-between px-0">
+                                    <span class="text-muted">Subtotal (${cart.length} item${cart.length !== 1 ? 's' : ''}):</span>
+                                    <span class="fw-semibold text-light">₹ ${subtotal.toFixed(2)}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between px-0">
+                                    <span class="text-muted">Tax (${(TAX_RATE * 100).toFixed(0)}%):</span>
+                                    <span class="fw-semibold text-danger">₹ ${tax.toFixed(2)}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between h4 fw-bolder text-primary px-0 pt-3 border-top mt-2 border-gray-700">
+                                    <span>Order Total:</span>
+                                    <span>₹ ${total.toFixed(2)}</span>
+                                </li>
+                            </ul>
+                            
+                            <!-- Updated button styling for dark mode -->
+                            <button
+                                class="btn btn-primary btn-lg w-100 mt-3 rounded-full py-3 shadow-lg hover:shadow-xl transition duration-300"
+                                onclick="showAlert('<i class=\\"bi bi-credit-card-fill me-1\\"></i> Checkout initiated for ₹ ${total.toFixed(2)}! (Simulated)')"
+                            >
+                                Proceed to Checkout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            $cartContent.html(itemsListHtml + summaryHtml);
+        }
+
+        /**
+         * Renders product cards in the product list view.
+         */
+        function renderProducts() {
+            const $productList = $('#product-list');
+            $productList.empty();
+
+            FOOTBALL_PRODUCTS.forEach(product => {
+                const productHtml = `
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <!-- Card uses card style from custom CSS for dark mode -->
+                        <div class="card h-100 shadow-2xl rounded-xl transform transition-transform hover:scale-[1.03] duration-300 hover:shadow-3xl">
+                            <img 
+                                src="${product.image}" 
+                                class="card-img-top rounded-t-xl p-4 bg-gray-800" 
+                                alt="${product.name}" 
+                                style="height: 180px; object-fit: cover;" 
+                                onerror="this.onerror=null;this.src='https://placehold.co/180x180/30304a/ffffff?text=Gear';this.style.backgroundColor='#30304a';"
+                            >
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-light text-xl text-truncate" title="${product.name}">${product.name}</h5>
+                                <!-- text-primary is defined in CSS to be the accent color -->
+                                <p class="card-text text-primary fw-semibold mb-2">${product.category}</p>
+                                <p class="card-text h4 fw-bolder text-light mt-auto mb-3">₹ ${product.price.toFixed(2)}</p>
+                                <!-- btn-primary is styled in custom CSS to use accent-primary -->
+                                <button 
+                                    class="btn btn-primary add-to-cart-btn w-100 rounded-full py-2 shadow-md hover:bg-violet-700 transition duration-300" 
+                                    data-product-id="${product.id}"
+                                    title="Add ${product.name} to cart"
+                                >
+                                    <i class="bi bi-cart-plus me-2"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                $productList.append(productHtml);
+            });
+        }
+
+
+        // --- INITIALIZATION AND EVENT BINDINGS ---
+        $(document).ready(function() {
+            // 1. Initial Load
+            updateCartBadge(); 
+            renderProducts(); // Render the product cards on load
+            switchView('products'); // Ensure the products view is shown initially
+            
+            // 2. Bind Add to Cart buttons
+            $('#product-list').on('click', '.add-to-cart-btn', function() {
+                const productId = parseInt($(this).data('product-id'));
+                addToCart(productId);
+            });
+
+            // 3. Bind Quantity/Remove buttons
+            $('#cart-view').on('click', '.cart-qty-btn', function() {
+                const productId = parseInt($(this).data('product-id'));
+                const action = $(this).data('action');
+                
+                const item = cart.find(i => i.id === productId);
+                if (!item) return;
+
+                switch (action) {
+                    case 'increment':
+                        updateQuantity(productId, item.quantity + 1);
+                        break;
+                    case 'decrement':
+                        updateQuantity(productId, item.quantity - 1); 
+                        break;
+                    case 'remove':
+                        removeFromCart(productId);
+                        break;
+                }
+            });
+            
+            // 4. Handle Navbar Scroll Effect
+            window.addEventListener("scroll", () => {
+                const navbar = document.querySelector(".custom-navbar");
+                if (window.scrollY > 50) {
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
+
+        });
+    </script>
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    <section
+        class="hero-banner position-relative text-center text-white d-flex align-items-center justify-content-center">
+
+        <div class="hero-bg-image"></div>
+
+        <div class="container position-relative z-1 py-5">
+
+            <h1 class="hero-brand-logo mb-5">SPIKE IT</h1>
+
+            <h2 class="display-4 fw-bold mb-4" style="font-size: 20px;">MOVE UP BY SIGNING UP</h2>
+
+            <form class="subscription-form mx-auto" style="max-width: 450px;">
+
+                <div class="input-group mb-3 form-fields">
+                    <input type="email" class="form-control py-3" placeholder="Enter your email..."
+                        aria-label="Enter your email" required>
+                    <button class="btn btn-light btn-lg px-4" type="submit">Submit</button>
+                </div>
+
+                <div class="submission-success-message text-center" style="display: none;">
+                    <h4 class="text-white fw-light">Thank You for Moving Up!</h4>
+                    <p class="text-light">Your email has been successfully subscribed.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+
+    <!-- footer -->
+    <footer class="bg-dark text-white pt-4">
+
+        <div class="container-fluid bg-dark text-center border-bottom border-secondary py-3">
+            <div class="row">
+                <div class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center">
+                    <i class="bi bi-truck me-2"></i> Free shipping on orders above Rs. 999
+                </div>
+                <div
+                    class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center border-start border-end border-secondary">
+                    <i class="bi bi-wallet me-2"></i> Cash On Delivery
+                </div>
+                <div class="col-md-4 d-flex align-items-center justify-content-center">
+                    <i class="bi bi-arrow-return-left me-2"></i> Return policy (Upto 7 days)
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid py-5 footer-main-content position-relative">
+
+            <div class="footer-bg-image"></div>
+
+            <div class="container position-relative z-1">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+                        <h5 class="text-uppercase mb-3">COMPANY</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Blogs</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Catalogues</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Compliance</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Terms And Conditions</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Refund Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+                        <h5 class="text-uppercase mb-3">NIVIA AFFILIATION</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white text-decoration-none">AIFF</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">ISL</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Bhutan Football Federation</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Srilankan Football Federation</a>
+                            </li>
+                            <li><a href="#" class="text-white text-decoration-none">BFI</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">VFI</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4">
+                        <h5 class="text-uppercase mb-3">CONNECT WITH US</h5>
+                        <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 9115497521</p>
+                        <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> contact@nivia.in</p>
+                        <p class="mb-1"><i class="bi bi-clock-fill me-2"></i> 9AM - 6PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid text-center border-top border-secondary py-3">
+            <div class="row d-flex align-items-center justify-content-between">
+                <div class="col-md-4 text-start">
+                    &copy; 2025 Niviasports
+                </div>
+                <div class="col-md-4 text-center">
+                    Design Partners: Intent Global
+                </div>
+                <div class="col-md-4 text-end social-icons">
+                    <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-youtube fs-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+
+
+    <!-- Navbar Scroll Script -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- jQuery (must be before your custom JS if they use it) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="/spiikeit fitness/javascript/card2.js"></script>
+    <script src="/spiikeit fitness/javascript/email.js"></script>
+    <script src="/spiikeit fitness/javascript/new-arrivals.js"></script>
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navbar Scroll Script -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+     <script>
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".custom-navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+
+
+</body>
+
+</html>
