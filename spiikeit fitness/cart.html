@@ -69,10 +69,10 @@
                 Shop by Sports
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarSportsDropdown">
-               <li><a class="dropdown-item" href="/spiikeit fitness/categories/football.html">Football</a></li>
-              <li><a class="dropdown-item" href="/spiikeit fitness/categories/basketball.html">Basketball</a></li>
-              <li><a class="dropdown-item" href="/spiikeit fitness/categories/cricket.html">Cricket</a></li>
-              <li><a class="dropdown-item" href="/spiikeit fitness/categories/volleyball.html">Badminton</a></li>
+                <li><a class="dropdown-item" href="/spiikeit fitness/categories/football.html">Football</a></li>
+                <li><a class="dropdown-item" href="/spiikeit fitness/categories/basketball.html">Basketball</a></li>
+                <li><a class="dropdown-item" href="/spiikeit fitness/categories/cricket.html">Cricket</a></li>
+                <li><a class="dropdown-item" href="/spiikeit fitness/categories/volleyball.html">Volleyball</a></li>
                 <li><hr class="dropdown-divider"></li>
 
             </ul>
@@ -80,7 +80,7 @@
          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/new-arrival.html">New Arrivals</a></li>
           <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/accessories.html">Accessories</a></li>
           <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/appearels.html">Apparels</a></li>
-          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/about-us.html">About us</a></li>
+           <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/about-us.html">Get in touch</a></li>
 
         </ul>
 
@@ -300,13 +300,16 @@ document.addEventListener("DOMContentLoaded", () => {
               <td colspan="2">₹${total.toLocaleString()}</td>
             </tr>
             <tr>
-              <td colspan="3">
-                <a href="index.html" class="btn btn-outline-dark mt-3">⬅ Back to Shopping</a>
-              </td>
-              <td colspan="3" class="text-end">
-                <button id="paymentBtn" class="btn btn-success px-4 mt-3">Proceed to Payment</button>
-              </td>
-            </tr>
+  <td colspan="2">
+    <a href="index.html" class="btn btn-outline-dark mt-3">⬅ Back to Shopping</a>
+  </td>
+  <td colspan="2" class="text-center">
+    <button id="clearCartBtn" class="btn btn-danger px-4 mt-3">🗑 Remove All</button>
+  </td>
+  <td colspan="2" class="text-end">
+    <button id="paymentBtn" class="btn btn-success px-4 mt-3">Proceed to Payment</button>
+  </td>
+</tr>
           </tfoot>
         </table>
       </div>
@@ -320,40 +323,55 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ✅ Attach button event listeners
-  function attachEventListeners() {
-    document.querySelectorAll(".increase").forEach(btn => {
-      btn.addEventListener("click", e => {
-        const index = e.target.dataset.index;
-        cart[index].qty = (cart[index].qty || 1) + 1;
-        saveCart();
-        renderCart();
-      });
+ function attachEventListeners() {
+  document.querySelectorAll(".increase").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const index = e.target.dataset.index;
+      cart[index].qty = (cart[index].qty || 1) + 1;
+      saveCart();
+      renderCart();
     });
+  });
 
-    document.querySelectorAll(".decrease").forEach(btn => {
-      btn.addEventListener("click", e => {
-        const index = e.target.dataset.index;
-        if (cart[index].qty > 1) {
-          cart[index].qty--;
-        } else if (confirm("Remove this item?")) {
-          cart.splice(index, 1);
-        }
-        saveCart();
-        renderCart();
-      });
-    });
-
-    document.querySelectorAll(".remove-btn").forEach(btn => {
-      btn.addEventListener("click", e => {
-        const index = e.target.dataset.index;
+  document.querySelectorAll(".decrease").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const index = e.target.dataset.index;
+      if (cart[index].qty > 1) {
+        cart[index].qty--;
+      } else if (confirm("Remove this item?")) {
         cart.splice(index, 1);
-        saveCart();
-        alert("Item removed from cart!");
-        renderCart();
-      });
+      }
+      saveCart();
+      renderCart();
     });
+  });
 
-    document.getElementById("paymentBtn").addEventListener("click", () => {
+  document.querySelectorAll(".remove-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const index = e.currentTarget.dataset.index;
+      cart.splice(index, 1);
+      saveCart();
+      alert("Item removed from cart!");
+      renderCart();
+    });
+  });
+
+  // ✅ Fix: Add Remove All functionality
+  const clearCartBtn = document.getElementById("clearCartBtn");
+  if (clearCartBtn) {
+    clearCartBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to remove all items from the cart?")) {
+        cart = [];
+        saveCart();
+        renderCart();
+        alert("All items removed from cart!");
+      }
+    });
+  }
+
+  const paymentBtn = document.getElementById("paymentBtn");
+  if (paymentBtn) {
+    paymentBtn.addEventListener("click", () => {
       const totalAmount = cart.reduce((sum, i) => sum + (i.price * (i.qty || 1)), 0);
       const itemCount = cart.reduce((sum, i) => sum + (i.qty || 1), 0);
 
@@ -362,6 +380,8 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "payment.html";
     });
   }
+}
+
 
   // ✅ Save + Update Count
   function saveCart() {

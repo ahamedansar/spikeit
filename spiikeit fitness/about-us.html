@@ -12,19 +12,49 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="/spiikeit fitness/style.css">
-
-   
-
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- Custom/Inline Styles -->
     <style>
-        /* General Setup based on original Canvas */
-        :root {
+        .btn-outline-primary {
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.price-text {
+  font-weight: 600;
+  color: #212529;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+
+
+ :root {
             --spikeit-red: #cc0000;
             --spikeit-dark: #212529;
             --spikeit-light: #f8f9fa;
@@ -39,7 +69,7 @@
 
         .hero-section {
             height: 80vh;
-            background: url('/images/contact.jpg ') center/cover no-repeat;
+            background: url('/images/getin.jpg ') center/cover no-repeat;
             position: relative;
             display: flex;
             align-items: center;
@@ -143,7 +173,8 @@
             position: absolute;
             border: 0;
         }
-        </style>
+
+    </style>
 
 </head>
 
@@ -157,53 +188,81 @@
     </div>
 
     <!-- Header -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-dark custom-navbar py-3">
-    <div class="container">
-      <a class="navbar-brand fs-3" href="#">SPIKEIT</a>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark custom-navbar py-3">
+        <div class="container">
+            <a class="navbar-brand fs-3" href="#">SPIKEIT</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul style="margin-top: 30px;" class="navbar-nav me-3">
-          <li class="nav-item"><a class="nav-link active" href="/spiikeit fitness/index.html">Home</a></li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarSportsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Shop by Sports
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarSportsDropdown">
-               <li><a class="dropdown-item" href="/spiikeit fitness/categories/football.html">Football</a></li>
-              <li><a class="dropdown-item" href="/spiikeit fitness/categories/basketball.html">Basketball</a></li>
-              <li><a class="dropdown-item" href="/spiikeit fitness/categories/cricket.html">Cricket</a></li>
-              <li><a class="dropdown-item" href="/spiikeit fitness/categories/volleyball.html">Badminton</a></li>
-                <li><hr class="dropdown-divider"></li>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul style="margin-top: 30px;" class="navbar-nav me-3">
+                    <li class="nav-item"><a class="nav-link active" href="/spiikeit fitness/index.html">Home</a></li>
 
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/new-arrival.html">New Arrivals</a></li>
-          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/accessories.html">Accessories</a></li>
-          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/appearels.html">Apparels</a></li>
-          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/about-us.html">About us</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarSportsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Shop by Sports
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarSportsDropdown">
+                            <li><a class="dropdown-item" href="/spiikeit fitness/categories/football.html">Football</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="/spiikeit fitness/categories/basketball.html">Basketball</a></li>
+                            <li><a class="dropdown-item" href="/spiikeit fitness/categories/cricket.html">Cricket</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="/spiikeit fitness/categories/volleyball.html">Badminton</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
 
-        </ul>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/new-arrival.html">New Arrivals</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/accessories.html">Accessories</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/appearels.html">Apparels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/about-us.html">Get in touch</a></li>
 
-        <form class="d-flex me-3">
-          <input class="form-control form-control-sm" type="search" placeholder="Search products">
-        </form>
+                </ul>
 
-        <div class="d-flex align-items-center">
-          <a href="login.html" class="text-white me-3"><i class="bi bi-person"></i></a>
-          <a href="#" class="text-white me-3"><i class="bi bi-heart"></i></a>
-          <a href="cart.html" class="text-white"><i class="bi bi-cart3"></i></a>
+                <form class="d-flex me-3">
+                    <input class="form-control form-control-sm" type="search" placeholder="Search products">
+                </form>
+
+                <div class="d-flex align-items-center">
+                    <a href="login.html" class="text-white me-3"><i class="bi bi-person"></i></a>
+                    <div class="navbar-utility-right ms-auto d-flex align-items-center gap-3 position-relative">
+                        <!-- Wishlist Icon -->
+                        <a href="/spiikeit fitness/wishlist.html" class="text-white position-relative">
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                            <span class="wishlist-count bg-danger text-white rounded-circle position-absolute"
+                                style="font-size: 12px; top: -8px; right: -10px; padding: 2px 6px;">0</span>
+                        </a>
+
+                        <!-- Cart Icon -->
+                        <a href="/spiikeit fitness/cart.html" class="text-white position-relative">
+                            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                            <span class="cart-count bg-danger text-white rounded-circle position-absolute"
+                                style="font-size: 12px; top: -8px; right: -10px; padding: 2px 6px;">0</span>
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
+    <!-- Hero Section -->
+
+    
+
+
+ <section class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <img src="/spiikeit fitness/images/logo.png" alt="Spike It Logo">
@@ -326,12 +385,6 @@
 
 
 
-
-
-
-
-
-
     <section
         class="hero-banner position-relative text-center text-white d-flex align-items-center justify-content-center">
 
@@ -401,7 +454,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
-                        <h5 class="text-uppercase mb-3">NIVIA AFFILIATION</h5>
+                        <h5 class="text-uppercase mb-3">SPIKEIT</h5>
                         <ul class="list-unstyled">
                             <li><a href="#" class="text-white text-decoration-none">AIFF</a></li>
                             <li><a href="#" class="text-white text-decoration-none">ISL</a></li>
@@ -415,8 +468,8 @@
 
                     <div class="col-lg-4 col-md-4">
                         <h5 class="text-uppercase mb-3">CONNECT WITH US</h5>
-                        <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 9115497521</p>
-                        <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> contact@nivia.in</p>
+                        <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 7012056376</p>
+                        <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> ahamedansarnasim@gmail.com</p>
                         <p class="mb-1"><i class="bi bi-clock-fill me-2"></i> 9AM - 6PM</p>
                     </div>
                 </div>
@@ -426,7 +479,7 @@
         <div class="container-fluid text-center border-top border-secondary py-3">
             <div class="row d-flex align-items-center justify-content-between">
                 <div class="col-md-4 text-start">
-                    &copy; 2025 Niviasports
+                    &copy; 2025 SPIKEIT
                 </div>
                 <div class="col-md-4 text-center">
                     Design Partners: Intent Global
@@ -458,11 +511,98 @@
     <script src="/spiikeit fitness/javascript/card2.js"></script>
     <script src="/spiikeit fitness/javascript/email.js"></script>
     <script src="/spiikeit fitness/javascript/new-arrivals.js"></script>
+    <script src="javascript/cart.js"></script>
+
+    <!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  // Initialize EmailJS
+  (function() {
+    emailjs.init("IFIAi9DwwYaAtwVlt"); // 🔑 Replace with your actual Public Key from EmailJS dashboard
+  })();
+
+  // jQuery form handling
+  $(document).ready(function() {
+    function displayMessage(message, isSuccess) {
+      const messageBox = $('#formMessage');
+      messageBox.text(message);
+      messageBox
+        .removeClass('text-success text-danger')
+        .addClass(isSuccess ? 'text-success' : 'text-danger')
+        .slideDown(300);
+    }
+
+    $('#contactForm').on('submit', function(e) {
+      e.preventDefault();
+
+      // Collect data
+      var name = $('#name').val().trim();
+      var email = $('#email').val().trim();
+      var subject = $('#subject').val().trim();
+      var message = $('#message').val().trim();
+
+      if (!name || !email || !subject || !message) {
+        displayMessage('⚠️ Please fill out all required fields.', false);
+        return;
+      }
+
+      // Disable button during send
+      const submitButton = $(this).find('button[type="submit"]');
+      submitButton.prop('disabled', true).html(
+        '<span class="spinner-border spinner-border-sm me-2" role="status"></span> Sending...'
+      );
+
+      // Prepare template parameters for EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+      };
+
+      // Send email via EmailJS
+      emailjs
+        .send('service_42qm9gc', 'template_juk9g65', templateParams)
+        .then(
+          function(response) {
+            $('#contactForm')[0].reset();
+            displayMessage('✅ Your message has been sent successfully! We’ll get back to you soon.', true);
+            submitButton.prop('disabled', false).html('Submit Message');
+            setTimeout(() => $('#formMessage').slideUp(), 5000);
+          },
+          function(error) {
+            console.error('EmailJS Error:', error);
+            displayMessage('❌ Failed to send your message. Please try again later.', false);
+            submitButton.prop('disabled', false).html('Submit Message');
+          }
+        );
+    });
+  });
+</script>
+
 
 
     <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth > 992) {
+    document.querySelectorAll(".navbar .dropdown").forEach(function (dropdown) {
+      dropdown.addEventListener("mouseenter", function () {
+        const toggle = dropdown.querySelector(".dropdown-toggle");
+        const menu = new bootstrap.Dropdown(toggle);
+        menu.show();
+      });
+      dropdown.addEventListener("mouseleave", function () {
+        const toggle = dropdown.querySelector(".dropdown-toggle");
+        const menu = new bootstrap.Dropdown(toggle);
+        menu.hide();
+      });
+    });
+  }
+});
 
+</script>
     <!-- Navbar Scroll Script -->
     <script>
         window.addEventListener('scroll', function () {
@@ -474,22 +614,118 @@
             }
         });
     </script>
-     <script>
-    window.addEventListener("scroll", () => {
-      const navbar = document.querySelector(".custom-navbar");
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    });
-  </script>
-<!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener("scroll", () => {
+            const navbar = document.querySelector(".custom-navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
 
-    <!-- Custom jQuery/JavaScript for Form Handling -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // ✅ Add to Cart Buttons
+            const addToCartButtons = document.querySelectorAll(".btn-add-cart, .btn-dark, .btn-light");
+
+            addToCartButtons.forEach(button => {
+                const text = button.textContent.trim().toLowerCase();
+                if (text.includes("add to cart")) {
+                    button.addEventListener("click", (e) => {
+                        e.preventDefault();
+
+                        // Find Product Card
+                        const card = button.closest(".product-card, .card");
+                        if (!card) return;
+
+                        // Product Info
+                       const priceElement = card.querySelector(".price-text, .card-price, .product-price, p.fw-bold");
+const priceText = priceElement ? priceElement.textContent.replace(/[^\d]/g, '') : "0";
+const price = parseInt(priceText) || 0;
+
+
+                        // Product Image
+                        let image = "";
+                        const imgTag = card.querySelector("img");
+                        if (imgTag) image = imgTag.src;
+
+                        // Product Object
+                        const product = { id: name.toLowerCase().replace(/\s+/g, "-"), name, price, image, qty: 1 };
+
+                        // Get & Update Cart
+                        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                        const existing = cart.find(item => item.id === product.id);
+                        if (existing) existing.qty += 1;
+                        else cart.push(product);
+
+                        localStorage.setItem("cart", JSON.stringify(cart));
+
+                        // ✅ Update Cart Count Immediately
+                        updateCartCount();
+
+                        // Show Alert (no redirect)
+                        alert(`${name} added to cart successfully! 🛒`);
+                    });
+                }
+            });
+
+            // ✅ Wishlist Buttons
+            const wishlistButtons = document.querySelectorAll(".wishlist-btn");
+            wishlistButtons.forEach(button => {
+                button.addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    const card = button.closest(".product-card, .card");
+                    if (!card) return;
+
+                    const priceElement = card.querySelector(".price-text, .card-price, .product-price, p.fw-bold");
+const priceText = priceElement ? priceElement.textContent.replace(/[^\d]/g, '') : "0";
+const price = parseInt(priceText) || 0;
+
+                    const image = card.querySelector("img")?.src || "";
+
+                    const wishlistItem = { id: name.toLowerCase().replace(/\s+/g, "-"), name, price, image };
+
+                    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+                    const exists = wishlist.find(item => item.id === wishlistItem.id);
+
+                    if (!exists) {
+                        wishlist.push(wishlistItem);
+                        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+                        alert(`${name} added to wishlist ❤️`);
+                    } else {
+                        alert(`${name} is already in your wishlist!`);
+                    }
+
+                    updateWishlistCount();
+                });
+            });
+
+            // ✅ Count Update Functions
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                const total = cart.reduce((sum, item) => sum + item.qty, 0);
+                const el = document.querySelector(".cart-count");
+                if (el) el.textContent = total;
+            }
+
+            function updateWishlistCount() {
+                const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+                const el = document.querySelector(".wishlist-count");
+                if (el) el.textContent = wishlist.length;
+            }
+
+            // ✅ Initialize Counts on Page Load
+            updateCartCount();
+            updateWishlistCount();
+
+        });
+    </script>
+
     <script>
         $(document).ready(function() {
             // Function to display a message to the user
@@ -541,6 +777,82 @@
             });
         });
     </script>
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+
+
+
+        // Product Filtering Logic
+        function filterProducts(sport) {
+            const productItems = document.querySelectorAll('.product-item');
+            const navLinks = document.querySelectorAll('#sportFilter .nav-link');
+
+            // 1. Update active button state
+            navLinks.forEach(link => {
+                if (link.dataset.filter === sport) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            // 2. Filter products
+            productItems.forEach(item => {
+                // 'all' filter shows everything
+                if (sport === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    // Check if the item's class list contains the selected sport
+                    if (item.classList.contains(sport)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Example: Subscription form submission (if you need it to hide the form)
+        // document.querySelector('.subscription-form').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     document.querySelector('.form-fields').style.display = 'none';
+        //     document.querySelector('.submission-success-message').style.display = 'block';
+        // });
+    </script>
+
+   
+    <script>
+        document.querySelectorAll('.wishlist-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const icon = this.querySelector('i');
+    icon.classList.toggle('fa-regular');
+    icon.classList.toggle('fa-solid');
+    icon.classList.toggle('text-danger');
+  });
+});
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body>

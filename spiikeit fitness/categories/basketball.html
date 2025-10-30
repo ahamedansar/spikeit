@@ -1,99 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Football | Spike It Sports</title>
+  <title>spike it</title>
 
-  <!-- Bootstrap + Icons + jQuery -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="/spiikeit fitness/style.css">
-
   <style>
-    body {
-      background-color: #0d0d0d;
-      color: #f0f0f0;
-      font-family: "Poppins", sans-serif;
-    }
-   
-   
-    
-    .product-card {
-      background: #1a1a1a;
-      border: none;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(255, 60, 0, 0.3);
-    }
-    .btn-orange {
-      background-color: #ff3c00;
-      border: none;
-      color: #fff;
-    }
-    .btn-orange:hover {
-      background-color: #ff5200;
-    }
-    #cartModal .modal-content {
-      background-color: #1a1a1a;
-      color: white;
-    }
-   .category-card {
-  background-color: #111;
-  border: 1px solid #333;
-  border-radius: 15px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-.category-card:hover {
-  border-color: #ff6600;
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
-}
-.product-card {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 15px;
+    .btn-outline-primary {
+  border-radius: 20px;
   transition: all 0.3s ease;
 }
-.product-card:hover {
-  border-color: #ff6600;
-  transform: translateY(-5px);
-}
-.product-card img {
-  border-radius: 15px 15px 0 0;
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.product-card .card-body {
+.btn-outline-primary:hover {
+  background-color: #007bff;
   color: #fff;
 }
-.btn-add {
-  background-color: #ff6600;
-  border: none;
-  color: #fff;
-  transition: 0.3s;
-}
-.btn-add:hover {
-  background-color: #e65c00;
-}
-  </style>
-</head>
-<body>
-<!-- Top Offers Bar -->
-    <!-- Top Offers Bar -->
-    <div class="offers-bar" style="background-color: #0d0d0d;">
-        <span class="offer-text">
-            🔥 Offers | 30% Off! On Minimum Purchase of ₹5000 | 15% Off! On Minimum Purchase of ₹2500
-        </span>
-    </div>
 
-    <!-- Header -->
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Top Offers Bar -->
+  <div class="offers-bar">
+    <span class="offer-text">
+      🔥 Offers | 30% Off! On Minimum Purchase of ₹5000 | 15% Off! On Minimum Purchase of ₹2500
+    </span>
+  </div>
+
+  <!-- Header -->
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark custom-navbar py-3">
     <div class="container">
       <a class="navbar-brand fs-3" href="#">SPIKEIT</a>
@@ -105,24 +47,27 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul style="margin-top: 30px;" class="navbar-nav me-3">
           <li class="nav-item"><a class="nav-link active" href="/spiikeit fitness/index.html">Home</a></li>
-          
+
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarSportsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Shop by Sports
+            <a class="nav-link dropdown-toggle" href="#" id="navbarSportsDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Shop by Sports
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarSportsDropdown">
               <li><a class="dropdown-item" href="/spiikeit fitness/categories/football.html">Football</a></li>
               <li><a class="dropdown-item" href="/spiikeit fitness/categories/basketball.html">Basketball</a></li>
               <li><a class="dropdown-item" href="/spiikeit fitness/categories/cricket.html">Cricket</a></li>
               <li><a class="dropdown-item" href="/spiikeit fitness/categories/volleyball.html">Badminton</a></li>
-                <li><hr class="dropdown-divider"></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
 
             </ul>
           </li>
-            <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/new-arrival.html">New Arrivals</a></li>
+          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/new-arrival.html">New Arrivals</a></li>
           <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/accessories.html">Accessories</a></li>
           <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/appearels.html">Apparels</a></li>
-          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/about-us.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/about-us.html">Get in touch</a></li>
 
         </ul>
 
@@ -132,18 +77,31 @@
 
         <div class="d-flex align-items-center">
           <a href="login.html" class="text-white me-3"><i class="bi bi-person"></i></a>
-          <a href="#" class="text-white me-3"><i class="bi bi-heart"></i></a>
-         <a href="#" class="text-white" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
-            🛒 (<span id="cartCount">0</span>)
-          </a>
+          <div class="navbar-utility-right ms-auto d-flex align-items-center gap-3 position-relative">
+            <!-- Wishlist Icon -->
+            <a href="/spiikeit fitness/wishlist.html" class="text-white position-relative">
+              <i class="fa-regular fa-heart fa-lg"></i>
+              <span class="wishlist-count bg-danger text-white rounded-circle position-absolute"
+                style="font-size: 12px; top: -8px; right: -10px; padding: 2px 6px;">0</span>
+            </a>
+
+            <!-- Cart Icon -->
+            <a href="/spiikeit fitness/cart.html" class="text-white position-relative">
+              <i class="fa-solid fa-cart-shopping fa-lg"></i>
+              <span class="cart-count bg-danger text-white rounded-circle position-absolute"
+                style="font-size: 12px; top: -8px; right: -10px; padding: 2px 6px;">0</span>
+            </a>
+          </div>
+
+
         </div>
       </div>
     </div>
   </nav>
 
-
-
-  <section class="hero-section" style="background: url('/images/bball.jpg')center/cover no-repeat;">
+  <!-- Hero Section -->
+ 
+  <section class="hero-section" style="background: url('/images/vball.jpg')center/cover no-repeat;">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <img src="/spiikeit fitness/images/logo.png" alt="Spike It Logo">
@@ -159,344 +117,831 @@
     <p>Explore the latest gear designed for power, precision, and performance.</p>
   </div>
 
-  <!-- Product List -->
- 
-    <h4 class="fw-bold mb-4 text-white">BROWSE CATEGORIES:</h4>
-    <div class="row g-4 justify-content-center">
-        <div class="col-6 col-md-3">
-            <div class="category-card text-center p-4" data-category="balls">
-                <img src="images/ball.png" class="mb-3" alt="Football Balls" width="70">
-                <h6 class="text-uppercase fw-bold text-white">Football Balls</h6>
-            </div>
-        </div>
-        <div class="col-6 col-md-3">
-            <div class="category-card text-center p-4" data-category="footwear">
-                <img src="images/shoes.png" class="mb-3" alt="Footwear" width="70">
-                <h6 class="text-uppercase fw-bold text-white">Footwear</h6>
-            </div>
-        </div>
-        <div class="col-6 col-md-3">
-            <div class="category-card text-center p-4" data-category="apparel">
-                <img src="images/jersey.png" class="mb-3" alt="Apparel" width="70">
-                <h6 class="text-uppercase fw-bold text-white">Apparel</h6>
-            </div>
-        </div>
-        <div class="col-6 col-md-3">
-            <div class="category-card text-center p-4" data-category="accessories">
-                <img src="images/accessories.png" class="mb-3" alt="Accessories" width="70">
-                <h6 class="text-uppercase fw-bold text-white">Accessories</h6>
-            </div>
-        </div>
+
+
+
+
+
+
+
+<!-- new arrivals -->
+  <section class="container my-5 new-arrivals-section">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="display-6 fw-bold text-uppercase">New Arrivals</h2>
+
+      <div id="sportFilters">
+        <button class="btn btn-dark btn-sm me-2 sport-filter-btn" data-filter="all">All</button>
+        <button class="btn btn-outline-dark btn-sm me-2 sport-filter-btn" data-filter="football">Football</button>
+        <button class="btn btn-outline-dark btn-sm me-2 sport-filter-btn" data-filter="cricket">Cricket</button>
+        <button class="btn btn-outline-dark btn-sm me-2 sport-filter-btn" data-filter="badminton">Badminton</button>
+        <button class="btn btn-outline-dark btn-sm me-2 sport-filter-btn" data-filter="basketball">Basketball</button>
+          <a href="/spiikeit fitness/new-arrival.html" class="btn btn-outline-primary btn-sm">See More</a>
+      </div>
     </div>
-</section>
 
-<section id="product-section" class="container my-5">
-    <h4 class="fw-bold text-white mb-4 text-uppercase">Products</h4>
-    <div class="row g-4" id="product-list"></div>
-</section>
-    
-  
+    <div class="d-flex overflow-auto pb-3" id="productSlider">
+      <!-- Product Card -->
+      <div class="product-item" data-category="football">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/spiikeit fitness/NEWARRIVAL IMAGE/CAP ARM BAND.png" class="card-img-top" alt="Football 1">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Equator Football (Size-3)</h6>
+            <p class="fw-bold text-dark mb-0">₹1,019</p>
+          </div>
+        </div>
+      </div>
 
-  <!-- Cart Modal -->
-  <div class="modal fade" id="cartModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header border-secondary">
-          <h5 class="modal-title">Your Cart</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+
+
+       <div class="product-item" data-category="football">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/spiikeit fitness/NEWARRIVAL IMAGE/CONE.png" class="card-img-top" alt="Football 1">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Equator Football (Size-3)</h6>
+            <p class="fw-bold text-dark mb-0">₹1,019</p>
+          </div>
         </div>
-        <div class="modal-body">
-          <table class="table table-dark table-striped" id="cartTable">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Product</th>
-                <th>Price (₹)</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-          <h5 class="text-end mt-3">Total: ₹<span id="cartTotal">0</span></h5>
+      </div>
+
+      <div class="product-item" data-category="football">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/spiikeit fitness/NEWARRIVAL IMAGE/download.png" class="card-img-top" alt="Football 1">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Equator Football (Size-3)</h6>
+            <p class="fw-bold text-dark mb-0">₹1,019</p>
+          </div>
         </div>
-        <div class="modal-footer border-secondary">
-          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button class="btn btn-orange" id="checkoutBtn">Checkout</button>
+      </div>
+
+       <div class="product-item" data-category="football">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/spiikeit fitness/NEWARRIVAL IMAGE/DUFFEL BAG.png" class="card-img-top" alt="Football 1">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Equator Football (Size-3)</h6>
+            <p class="fw-bold text-dark mb-0">₹1,019</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item" data-category="football">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/spiikeit fitness/NEWARRIVAL IMAGE/FOOTBALL WB.png" class="card-img-top" alt="Football 1">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Equator Football (Size-3)</h6>
+            <p class="fw-bold text-dark mb-0">₹1,019</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item" data-category="football">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/spiikeit fitness/NEWARRIVAL IMAGE/GLOVES.png" class="card-img-top" alt="Football 1">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Equator Football (Size-3)</h6>
+            <p class="fw-bold text-dark mb-0">₹1,019</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item" data-category="football">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/spiikeit fitness/NEWARRIVAL IMAGE/SHIN GUARD.png" class="card-img-top" alt="Football 1">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Equator Football (Size-3)</h6>
+            <p class="fw-bold text-dark mb-0">₹1,019</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card -->
+      <div class="product-item" data-category="cricket">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/CRICKET-IMAGES/BATTING CLOVES.png" class="card-img-top" alt="Cricket Bat">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm btn-add-cart">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">MRF Legend Bat</h6>
+            <p class="fw-bold text-dark mb-0">₹2,499</p>
+            
+          </div>
+        </div>
+      </div>
+
+       <div class="product-item" data-category="cricket">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/CRICKET-IMAGES/BALL.png" class="card-img-top" alt="Cricket Bat">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm btn-add-cart">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">MRF Legend Bat</h6>
+            <p class="fw-bold text-dark mb-0">₹2,499</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="product-item" data-category="cricket">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/CRICKET-IMAGES/CRICKET GLOVES.png" class="card-img-top" alt="Cricket Bat">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm btn-add-cart">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">MRF Legend Bat</h6>
+            <p class="fw-bold text-dark mb-0">₹2,499</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="product-item" data-category="cricket">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/CRICKET-IMAGES/CRICKET SHOE.png" class="card-img-top" alt="Cricket Bat">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm btn-add-cart">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">MRF Legend Bat</h6>
+            <p class="fw-bold text-dark mb-0">₹2,499</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="product-item" data-category="cricket">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/CRICKET-IMAGES/HELMET .png" class="card-img-top" alt="Cricket Bat">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm btn-add-cart">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">MRF Legend Bat</h6>
+            <p class="fw-bold text-dark mb-0">₹2,499</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="product-item" data-category="cricket">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/CRICKET-IMAGES/PAD.png" class="card-img-top" alt="Cricket Bat">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm btn-add-cart">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">MRF Legend Bat</h6>
+            <p class="fw-bold text-dark mb-0">₹2,499</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="product-item" data-category="cricket">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/CRICKET-IMAGES/JERSEY.png" class="card-img-top" alt="Cricket Bat">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm btn-add-cart">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">MRF Legend Bat</h6>
+            <p class="fw-bold text-dark mb-0">₹2,499</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card -->
+      <div class="product-item" data-category="badminton">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/badminton image/badminton kit bag.png" class="card-img-top" alt="Badminton Racket">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Yonex Astrox 99</h6>
+            <p class="fw-bold text-dark mb-0">₹3,899</p>
+          </div>
+        </div>
+      </div>
+      <div class="product-item" data-category="badminton">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/badminton image/cock.png" class="card-img-top" alt="Badminton Racket">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Yonex Astrox 99</h6>
+            <p class="fw-bold text-dark mb-0">₹3,899</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item" data-category="badminton">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/badminton image/racket.png" class="card-img-top" alt="Badminton Racket">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Yonex Astrox 99</h6>
+            <p class="fw-bold text-dark mb-0">₹3,899</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item" data-category="badminton">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/badminton image/shoe.png" class="card-img-top" alt="Badminton Racket">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Yonex Astrox 99</h6>
+            <p class="fw-bold text-dark mb-0">₹3,899</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="product-item" data-category="badminton">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/badminton image/net and poles.png" class="card-img-top" alt="Badminton Racket">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Yonex Astrox 99</h6>
+            <p class="fw-bold text-dark mb-0">₹3,899</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="product-item" data-category="badminton">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/badminton image/grip tape.png" class="card-img-top" alt="Badminton Racket">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Yonex Astrox 99</h6>
+            <p class="fw-bold text-dark mb-0">₹3,899</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-item" data-category="badminton">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/badminton image/sports socks.png" class="card-img-top" alt="Badminton Racket">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+               <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Yonex Astrox 99</h6>
+            <p class="fw-bold text-dark mb-0">₹3,899</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card -->
+      <div class="product-item" data-category="basketball">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/basket ball images/boot.png" class="card-img-top" alt="Basketball">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Spalding Street Ball</h6>
+            <p class="fw-bold text-dark mb-0">₹1,799</p>
+          </div>
+        </div>
+      </div>
+ <div class="product-item" data-category="basketball">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/basket ball images/download.png" class="card-img-top" alt="Basketball">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Spalding Street Ball</h6>
+            <p class="fw-bold text-dark mb-0">₹1,799</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="product-item" data-category="basketball">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/basket ball images/jersey.png" class="card-img-top" alt="Basketball">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Spalding Street Ball</h6>
+            <p class="fw-bold text-dark mb-0">₹1,799</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="product-item" data-category="basketball">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/basket ball images/kit bag.png" class="card-img-top" alt="Basketball">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Spalding Street Ball</h6>
+            <p class="fw-bold text-dark mb-0">₹1,799</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="product-item" data-category="basketball">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/basket ball images/water bottle.png" class="card-img-top" alt="Basketball">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Spalding Street Ball</h6>
+            <p class="fw-bold text-dark mb-0">₹1,799</p>
+          </div>
+        </div>
+      </div>
+
+
+       <div class="product-item" data-category="basketball">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/basket ball images/portable basket hoop.png" class="card-img-top" alt="Basketball">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Spalding Street Ball</h6>
+            <p class="fw-bold text-dark mb-0">₹1,799</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="product-item" data-category="basketball">
+        <div class="card product-card border-0 shadow-sm mx-2">
+          <div class="product-img-wrapper">
+            <img src="/basket ball images/socks.png" class="card-img-top" alt="Basketball">
+            <div class="hover-overlay">
+              <button class="btn btn-light btn-sm">Add to Cart</button>
+              <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+
+            </div>
+          </div>
+          <div class="card-body text-center p-3">
+            <h6 class="card-title mb-1 fw-semibold">Spalding Street Ball</h6>
+            <p class="fw-bold text-dark mb-0">₹1,799</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <section
+    class="hero-banner position-relative text-center text-white d-flex align-items-center justify-content-center">
+
+    <div class="hero-bg-image"></div>
+
+    <div class="container position-relative z-1 py-5">
+
+      <h1 class="hero-brand-logo mb-5">SPIKE IT</h1>
+
+      <h2 class="display-4 fw-bold mb-4" style="font-size: 20px;">MOVE UP BY SIGNING UP</h2>
+
+      <form class="subscription-form mx-auto" style="max-width: 450px;">
+
+        <div class="input-group mb-3 form-fields">
+          <input type="email" class="form-control py-3" placeholder="Enter your email..." aria-label="Enter your email"
+            required>
+          <button class="btn btn-light btn-lg px-4" type="submit">Submit</button>
+        </div>
+
+        <div class="submission-success-message text-center" style="display: none;">
+          <h4 class="text-white fw-light">Thank You for Moving Up!</h4>
+          <p class="text-light">Your email has been successfully subscribed.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+
+  <!-- footer -->
+  <footer class="bg-dark text-white pt-4">
+
+    <div class="container-fluid bg-dark text-center border-bottom border-secondary py-3">
+      <div class="row">
+        <div class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center">
+          <i class="bi bi-truck me-2"></i> Free shipping on orders above Rs. 999
+        </div>
+        <div
+          class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center border-start border-end border-secondary">
+          <i class="bi bi-wallet me-2"></i> Cash On Delivery
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <i class="bi bi-arrow-return-left me-2"></i> Return policy (Upto 7 days)
         </div>
       </div>
     </div>
-  </div>
 
+    <div class="container-fluid py-5 footer-main-content position-relative">
 
+      <div class="footer-bg-image"></div>
 
+      <div class="container position-relative z-1">
+        <div class="row">
 
+          <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+            <h5 class="text-uppercase mb-3">COMPANY</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Blogs</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Catalogues</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Compliance</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Terms And Conditions</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Refund Policy</a></li>
+            </ul>
+          </div>
 
-    <section
-        class="hero-banner position-relative text-center text-white d-flex align-items-center justify-content-center">
+          <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+            <h5 class="text-uppercase mb-3">SPIKEIT</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white text-decoration-none">AIFF</a></li>
+              <li><a href="#" class="text-white text-decoration-none">ISL</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Bhutan Football Federation</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Srilankan Football Federation</a>
+              </li>
+              <li><a href="#" class="text-white text-decoration-none">BFI</a></li>
+              <li><a href="#" class="text-white text-decoration-none">VFI</a></li>
+            </ul>
+          </div>
 
-        <div class="hero-bg-image"></div>
-
-        <div class="container position-relative z-1 py-5">
-
-            <h1 class="hero-brand-logo mb-5">SPIKE IT</h1>
-
-            <h2 class="display-4 fw-bold mb-4" style="font-size: 20px;">MOVE UP BY SIGNING UP</h2>
-
-            <form class="subscription-form mx-auto" style="max-width: 450px;">
-
-                <div class="input-group mb-3 form-fields">
-                    <input type="email" class="form-control py-3" placeholder="Enter your email..."
-                        aria-label="Enter your email" required>
-                    <button class="btn btn-light btn-lg px-4" type="submit">Submit</button>
-                </div>
-
-                <div class="submission-success-message text-center" style="display: none;">
-                    <h4 class="text-white fw-light">Thank You for Moving Up!</h4>
-                    <p class="text-light">Your email has been successfully subscribed.</p>
-                </div>
-            </form>
-        </div>
-    </section>
-
-
-
-    <!-- footer -->
-    <footer class="bg-dark text-white pt-4">
-
-        <div class="container-fluid bg-dark text-center border-bottom border-secondary py-3">
-            <div class="row">
-                <div class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-truck me-2"></i> Free shipping on orders above Rs. 999
-                </div>
-                <div
-                    class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center border-start border-end border-secondary">
-                    <i class="bi bi-wallet me-2"></i> Cash On Delivery
-                </div>
-                <div class="col-md-4 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-arrow-return-left me-2"></i> Return policy (Upto 7 days)
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid py-5 footer-main-content position-relative">
-
-            <div class="footer-bg-image"></div>
-
-            <div class="container position-relative z-1">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
-                        <h5 class="text-uppercase mb-3">COMPANY</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Blogs</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Catalogues</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Compliance</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Terms And Conditions</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Refund Policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
-                        <h5 class="text-uppercase mb-3">NIVIA AFFILIATION</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white text-decoration-none">AIFF</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">ISL</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Bhutan Football Federation</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Srilankan Football Federation</a>
-                            </li>
-                            <li><a href="#" class="text-white text-decoration-none">BFI</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">VFI</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4">
-                        <h5 class="text-uppercase mb-3">CONNECT WITH US</h5>
-                        <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 9115497521</p>
-                        <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> contact@nivia.in</p>
-                        <p class="mb-1"><i class="bi bi-clock-fill me-2"></i> 9AM - 6PM</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid text-center border-top border-secondary py-3">
-            <div class="row d-flex align-items-center justify-content-between">
-                <div class="col-md-4 text-start">
-                    &copy; 2025 Niviasports
-                </div>
-                <div class="col-md-4 text-center">
-                    Design Partners: Intent Global
-                </div>
-                <div class="col-md-4 text-end social-icons">
-                    <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
-                    <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
-                    <a href="#" class="text-white me-3"><i class="bi bi-twitter-x fs-5"></i></a>
-                    <a href="#" class="text-white"><i class="bi bi-youtube fs-5"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-  <!-- JS -->
-
-
-  <!-- Script -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function(){
-
-    const products = {
-        balls: [
-            {name:"Nivia Pro Ball", price:"₹1599", img:"images/ball1.jpg"},
-            {name:"SpikeIt Match Ball", price:"₹1299", img:"images/ball2.jpg"},
-            {name:"Elite Football", price:"₹999", img:"images/ball3.jpg"},
-            {name:"Street Pro", price:"₹899", img:"images/ball4.jpg"},
-            {name:"Velocity", price:"₹1199", img:"images/ball5.jpg"},
-            {name:"StormX", price:"₹1399", img:"images/ball6.jpg"},
-            {name:"Force Max", price:"₹1099", img:"images/ball7.jpg"},
-            {name:"PowerShot", price:"₹999", img:"images/ball8.jpg"},
-            {name:"Magnet Pro", price:"₹899", img:"images/ball9.jpg"},
-            {name:"Precision 2.0", price:"₹1599", img:"images/ball10.jpg"}
-        ],
-        footwear: [
-            {name:"Spike Cleats", price:"₹2999", img:"images/shoes1.jpg"},
-            {name:"PowerGrip", price:"₹2799", img:"images/shoes2.jpg"},
-            {name:"Turbo Boots", price:"₹2599", img:"images/shoes3.jpg"},
-            {name:"Street Kicker", price:"₹2399", img:"images/shoes4.jpg"},
-            {name:"Blaze Runner", price:"₹2199", img:"images/shoes5.jpg"},
-            {name:"Aero Sprint", price:"₹2999", img:"images/shoes6.jpg"},
-            {name:"HyperMax", price:"₹2799", img:"images/shoes7.jpg"},
-            {name:"Raptor", price:"₹2499", img:"images/shoes8.jpg"},
-            {name:"Phantom", price:"₹2699", img:"images/shoes9.jpg"},
-            {name:"ShadowX", price:"₹2899", img:"images/shoes10.jpg"}
-        ],
-        apparel: [
-            {name:"Training Jersey", price:"₹899", img:"images/jersey1.jpg"},
-            {name:"Match Kit", price:"₹1299", img:"images/jersey2.jpg"},
-            {name:"Pro Shorts", price:"₹699", img:"images/jersey3.jpg"},
-            {name:"Compression Tee", price:"₹999", img:"images/jersey4.jpg"},
-            {name:"Track Pants", price:"₹1199", img:"images/jersey5.jpg"},
-            {name:"Full Sleeve Pro", price:"₹999", img:"images/jersey6.jpg"},
-            {name:"Sweat Shield", price:"₹899", img:"images/jersey7.jpg"},
-            {name:"Victory Tee", price:"₹799", img:"images/jersey8.jpg"},
-            {name:"Prime Shorts", price:"₹699", img:"images/jersey9.jpg"},
-            {name:"All Weather Jersey", price:"₹1299", img:"images/jersey10.jpg"}
-        ],
-        accessories: [
-            {name:"Shin Guards", price:"₹499", img:"images/acc1.jpg"},
-            {name:"Wristband", price:"₹199", img:"images/acc2.jpg"},
-            {name:"Headband", price:"₹299", img:"images/acc3.jpg"},
-            {name:"Water Bottle", price:"₹399", img:"images/acc4.jpg"},
-            {name:"Duffel Bag", price:"₹1199", img:"images/acc5.jpg"},
-            {name:"Socks Set", price:"₹299", img:"images/acc6.jpg"},
-            {name:"Gloves", price:"₹699", img:"images/acc7.jpg"},
-            {name:"Towel", price:"₹499", img:"images/acc8.jpg"},
-            {name:"Cap", price:"₹399", img:"images/acc9.jpg"},
-            {name:"Ankle Support", price:"₹599", img:"images/acc10.jpg"}
-        ]
-    };
-
-    $(".category-card").click(function(){
-        const category = $(this).data("category");
-        const list = $("#product-list");
-        list.empty();
-
-        products[category].forEach(p => {
-            list.append(`
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-card card h-100">
-                        <img src="${p.img}" alt="${p.name}">
-                        <div class="card-body text-center">
-                            <h6 class="fw-bold">${p.name}</h6>
-                            <p class="mb-2">${p.price}</p>
-                            <button class="btn btn-add btn-sm">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            `);
-        });
-
-        $("html, body").animate({ scrollTop: $("#product-section").offset().top - 70 }, 500);
-    });
-
-});
-</script>
-  <script>
-    const products = [
-      { name: "Football Pro-X", price: 1599, img: "https://placehold.co/300x200/ff3c00/ffffff?text=Pro+X" },
-      { name: "Nivia Classic Ball", price: 999, img: "https://placehold.co/300x200/ff7b00/ffffff?text=Classic" },
-      { name: "SpikeIt Jersey", price: 1299, img: "https://placehold.co/300x200/ffae00/ffffff?text=Jersey" },
-      { name: "Grip Socks", price: 499, img: "https://placehold.co/300x200/ffaa33/ffffff?text=Socks" },
-      { name: "Power Cleats", price: 2999, img: "https://placehold.co/300x200/ff3c00/ffffff?text=Cleats" }
-    ];
-
-    // Inject products dynamically
-    products.forEach(p => {
-      $("#product-list").append(`
-        <div class="col-md-4">
-          <div class="card product-card h-100 text-center">
-            <img src="${p.img}" class="card-img-top" alt="${p.name}">
-            <div class="card-body">
-              <h5 class="card-title">${p.name}</h5>
-              <p class="card-text">₹${p.price}</p>
-              <button class="btn btn-orange add-cart" data-name="${p.name}" data-price="${p.price}">Add to Cart</button>
-            </div>
+          <div class="col-lg-4 col-md-4">
+            <h5 class="text-uppercase mb-3">CONNECT WITH US</h5>
+            <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 7012056376</p>
+            <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> ahamedansarnasim@gmail.com</p>
+            <p class="mb-1"><i class="bi bi-clock-fill me-2"></i> 9AM - 6PM</p>
           </div>
         </div>
-      `);
-    });
+      </div>
+    </div>
 
-    // Cart Logic
-    let cart = [];
+    <div class="container-fluid text-center border-top border-secondary py-3">
+      <div class="row d-flex align-items-center justify-content-between">
+        <div class="col-md-4 text-start">
+          &copy; 2025 SPIKEIT
+        </div>
+        <div class="col-md-4 text-center">
+          Design Partners: Intent Global
+        </div>
+        <div class="col-md-4 text-end social-icons">
+          <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-twitter-x fs-5"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-youtube fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    $(document).on("click", ".add-cart", function () {
-      const name = $(this).data("name");
-      const price = parseFloat($(this).data("price"));
-      cart.push({ name, price });
-      updateCart();
-      alert(`✅ ${name} added to cart!`);
-    });
+  <!-- Bootstrap JS -->
 
-    function updateCart() {
-      $("#cartCount").text(cart.length);
-      const tbody = $("#cartTable tbody");
-      tbody.empty();
-      let total = 0;
-      cart.forEach((item, i) => {
-        total += item.price;
-        tbody.append(`
-          <tr>
-            <td>${i + 1}</td>
-            <td>${item.name}</td>
-            <td>${item.price}</td>
-            <td><button class="btn btn-sm btn-danger remove-item" data-index="${i}">X</button></td>
-          </tr>
-        `);
-      });
-      $("#cartTotal").text(total);
-    }
 
-    $(document).on("click", ".remove-item", function () {
-      const i = $(this).data("index");
-      cart.splice(i, 1);
-      updateCart();
-    });
+  <!-- Navbar Scroll Script -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    $("#checkoutBtn").on("click", function () {
-      if (cart.length === 0) {
-        alert("🛍️ Your cart is empty!");
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- jQuery (must be before your custom JS if they use it) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="/spiikeit fitness/javascript/card2.js"></script>
+  <script src="/spiikeit fitness/javascript/email.js"></script>
+  <script src="/spiikeit fitness/javascript/new-arrivals.js"></script>
+  <script src="javascript/cart.js"></script>
+
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Navbar Scroll Script -->
+  <script>
+    window.addEventListener('scroll', function () {
+      const header = document.getElementById('mainHeader');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
       } else {
-        alert(`🎉 Checkout successful! Total: ₹${$("#cartTotal").text()}`);
-        cart = [];
-        updateCart();
-        $("#cartModal").modal("hide");
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+  <script>
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".custom-navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
       }
     });
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    // ✅ Add to Cart Buttons
+    const addToCartButtons = document.querySelectorAll(".btn-add-cart, .btn-dark, .btn-light");
+    
+    addToCartButtons.forEach(button => {
+      const text = button.textContent.trim().toLowerCase();
+      if (text.includes("add to cart")) {
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Find Product Card
+          const card = button.closest(".product-card, .card");
+          if (!card) return;
+
+          // Product Info
+          const name = card.querySelector(".card-title, .product-name, h5, h4")?.innerText.trim() || "Unnamed Product";
+          const priceElement = card.querySelector(".card-price, .fw-bold, .price, p");
+          let priceText = priceElement ? priceElement.innerText.trim() : "₹0";
+          let price = parseInt(priceText.replace(/[^0-9]/g, "")) || 0;
+
+          // Product Image
+          let image = "";
+          const imgTag = card.querySelector("img");
+          if (imgTag) image = imgTag.src;
+
+          // Product Object
+          const product = { id: name.toLowerCase().replace(/\s+/g, "-"), name, price, image, qty: 1 };
+
+          // Get & Update Cart
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const existing = cart.find(item => item.id === product.id);
+          if (existing) existing.qty += 1;
+          else cart.push(product);
+
+          localStorage.setItem("cart", JSON.stringify(cart));
+
+          // ✅ Update Cart Count Immediately
+          updateCartCount();
+
+          // Show Alert (no redirect)
+          alert(`${name} added to cart successfully! 🛒`);
+        });
+      }
+    });
+
+    // ✅ Wishlist Buttons
+    const wishlistButtons = document.querySelectorAll(".wishlist-btn");
+    wishlistButtons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const card = button.closest(".product-card, .card");
+        if (!card) return;
+
+        const name = card.querySelector(".card-title, h6, h5")?.innerText.trim() || "Unnamed Product";
+        const priceElement = card.querySelector(".fw-bold, .price");
+        const priceText = priceElement ? priceElement.innerText.trim() : "₹0";
+        const price = parseInt(priceText.replace(/[^0-9]/g, "")) || 0;
+        const image = card.querySelector("img")?.src || "";
+
+        const wishlistItem = { id: name.toLowerCase().replace(/\s+/g, "-"), name, price, image };
+
+        let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+        const exists = wishlist.find(item => item.id === wishlistItem.id);
+
+        if (!exists) {
+          wishlist.push(wishlistItem);
+          localStorage.setItem("wishlist", JSON.stringify(wishlist));
+          alert(`${name} added to wishlist ❤️`);
+        } else {
+          alert(`${name} is already in your wishlist!`);
+        }
+
+        updateWishlistCount();
+      });
+    });
+
+    // ✅ Count Update Functions
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const total = cart.reduce((sum, item) => sum + item.qty, 0);
+      const el = document.querySelector(".cart-count");
+      if (el) el.textContent = total;
+    }
+
+    function updateWishlistCount() {
+      const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      const el = document.querySelector(".wishlist-count");
+      if (el) el.textContent = wishlist.length;
+    }
+
+    // ✅ Initialize Counts on Page Load
+    updateCartCount();
+    updateWishlistCount();
+
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
+
 </html>

@@ -13,8 +13,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="/spiikeit fitness/style.css">
     <style>
+        .btn-outline-primary {
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
 
-         :root {
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card img {
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .price-text {
+            font-weight: 600;
+            color: #212529;
+        }
+
+        .btn-outline-danger:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+
+
+        :root {
             --spikeit-red: #cc0000;
             --spikeit-dark: #212529;
             --spikeit-light: #f8f9fa;
@@ -89,20 +128,7 @@
         }
 
         /* Filter Tabs/Pills Styling */
-        .nav-tabs .nav-link {
-            font-weight: 700;
-            color: var(--spikeit-dark);
-            border: none;
-            border-bottom: 3px solid transparent;
-            margin-bottom: -1px;
-            transition: border-color 0.2s;
-        }
 
-        .nav-tabs .nav-link.active {
-            color: var(--spikeit-red);
-            background-color: transparent;
-            border-color: var(--spikeit-red);
-        }
 
         .filter-type {
             border-radius: 50rem;
@@ -117,6 +143,7 @@
             border-color: var(--spikeit-dark);
         }
     </style>
+
 </head>
 
 <body>
@@ -129,628 +156,820 @@
     </div>
 
     <!-- Header -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-dark custom-navbar py-3">
-    <div class="container">
-      <a class="navbar-brand fs-3" href="#">SPIKEIT</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul style="margin-top: 30px;" class="navbar-nav me-3">
-          <li class="nav-item"><a class="nav-link active" href="/spiikeit fitness/index.html">Home</a></li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarSportsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Shop by Sports
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarSportsDropdown">
-               <li><a class="dropdown-item" href="/spiikeit fitness/categories/football.html">Football</a></li>
-              <li><a class="dropdown-item" href="/spiikeit fitness/categories/basketball.html">Basketball</a></li>
-              <li><a class="dropdown-item" href="/spiikeit fitness/categories/cricket.html">Cricket</a></li>
-              <li><a class="dropdown-item" href="/spiikeit fitness/categories/volleyball.html">Badminton</a></li>
-                <li><hr class="dropdown-divider"></li>
-
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/new-arrival.html">New Arrivals</a></li>
-          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/accessories.html">Accessories</a></li>
-          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/appearels.html">Apparels</a></li>
-          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/about-us.html">About us</a></li>
-
-        </ul>
-
-        <form class="d-flex me-3">
-          <input class="form-control form-control-sm" type="search" placeholder="Search products">
-        </form>
-
-        <div class="d-flex align-items-center">
-          <a href="login.html" class="text-white me-3"><i class="bi bi-person"></i></a>
-          <a href="#" class="text-white me-3"><i class="bi bi-heart"></i></a>
-          <a href="cart.html" class="text-white"><i class="bi bi-cart3"></i></a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <img src="/spiikeit fitness/images/logo.png" alt="Spike It Logo">
-      <h1>Welcome to Spike It Sports</h1>
-      <p class="mt-2">Gear Up. Game On. Perform Like a Pro.</p>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- APPARELS PRODUCT SECTION - New Content Here -->
-    <section id="apparelsSection" class="py-5" style="background-color: var(--spikeit-light);">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark custom-navbar py-3">
         <div class="container">
-            <h2 class="text-center fw-bold mb-3 display-6" style="color: var(--spikeit-dark);">
-                Shop By Category
+            <a class="navbar-brand fs-3" href="#">SPIKEIT</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul style="margin-top: 30px;" class="navbar-nav me-3">
+                    <li class="nav-item"><a class="nav-link active" href="/spiikeit fitness/index.html">Home</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarSportsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Shop by Sports
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarSportsDropdown">
+                            <li><a class="dropdown-item" href="/spiikeit fitness/categories/football.html">Football</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="/spiikeit fitness/categories/basketball.html">Basketball</a></li>
+                            <li><a class="dropdown-item" href="/spiikeit fitness/categories/cricket.html">Cricket</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="/spiikeit fitness/categories/volleyball.html">Badminton</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/new-arrival.html">New Arrivals</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/accessories.html">Accessories</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/appearels.html">Apparels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/about-us.html">Get in touch</a>
+                    </li>
+
+                </ul>
+
+                <form class="d-flex me-3">
+                    <input class="form-control form-control-sm" type="search" placeholder="Search products">
+                </form>
+
+                <div class="d-flex align-items-center">
+                    <a href="login.html" class="text-white me-3"><i class="bi bi-person"></i></a>
+                    <div class="navbar-utility-right ms-auto d-flex align-items-center gap-3 position-relative">
+                        <!-- Wishlist Icon -->
+                        <a href="/spiikeit fitness/wishlist.html" class="text-white position-relative">
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                            <span class="wishlist-count bg-danger text-white rounded-circle position-absolute"
+                                style="font-size: 12px; top: -8px; right: -10px; padding: 2px 6px;">0</span>
+                        </a>
+
+                        <!-- Cart Icon -->
+                        <a href="/spiikeit fitness/cart.html" class="text-white position-relative">
+                            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                            <span class="cart-count bg-danger text-white rounded-circle position-absolute"
+                                style="font-size: 12px; top: -8px; right: -10px; padding: 2px 6px;">0</span>
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero-section" style="background: url('/images/fball.jpg')center/cover no-repeat;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="/spiikeit fitness/images/logo.png" alt="Spike It Logo">
+            <h1>Welcome to Spike It Sports</h1>
+            <p class="mt-2">Gear Up. Game On. Perform Like a Pro.</p>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ACCESSORIES PRODUCT SECTION - New Content Here -->
+    <section class="py-5" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4 display-5" style="color: var(--spikeit-dark);">
+                Essential Sport Accessories
             </h2>
             <p class="text-center text-muted mb-5">
-                Explore our range of performance and casual wear for all athletes.
+                Browse our full collection of gear, equipment, and accessories.
             </p>
 
-            <!-- PRIMARY Filter: Gender/Category Tabs -->
-            <ul class="nav nav-tabs justify-content-center mb-4" id="genderFilter" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="men-tab" data-bs-toggle="tab" data-bs-target="#menTab"
-                        type="button" role="tab" aria-controls="menTab" aria-selected="true"
-                        onclick="filterType('men', 'all')">Men</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="women-tab" data-bs-toggle="tab" data-bs-target="#womenTab"
-                        type="button" role="tab" aria-controls="womenTab" aria-selected="false"
-                        onclick="filterType('women', 'all')">Women</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="kids-tab" data-bs-toggle="tab" data-bs-target="#kidsTab"
-                        type="button" role="tab" aria-controls="kidsTab" aria-selected="false"
-                        onclick="filterType('kids', 'all')">Kids</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="unisex-tab" data-bs-toggle="tab" data-bs-target="#unisexTab"
-                        type="button" role="tab" aria-controls="unisexTab" aria-selected="false"
-                        onclick="filterType('unisex', 'all')">Unisex</button>
-                </li>
-            </ul>
 
-            <!-- Tab Content (Product Grid Container) -->
-            <div class="tab-content">
-                <!-- ================================= MEN'S APPAREL TAB ================================= -->
-                <div class="tab-pane fade show active" id="menTab" role="tabpanel" aria-labelledby="men-tab">
+            <!-- Filter Navigation (Pills) -->
 
-                    <!-- SECONDARY Filter: Product Type Pills (Specific to the active tab) -->
-                    <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-men">
-                        <button class="btn btn-outline-dark filter-type active" data-type="all"
-                            onclick="filterType('men', 'all')">All Men's</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="tshirt"
-                            onclick="filterType('men', 'tshirt')">T-Shirts</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="shorts"
-                            onclick="filterType('men', 'shorts')">Shorts</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
-                            onclick="filterType('men', 'tracksuit')">Tracksuits</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="trackpant"
-                            onclick="filterType('men', 'trackpant')">Track Pants</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="jersey"
-                            onclick="filterType('men', 'jersey')">Jersey Sets</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="jacket"
-                            onclick="filterType('men', 'jacket')">Jackets</button>
-                    </div>
 
-                    <div class="row" id="productGrid-men">
-                        <!-- MEN's T-SHIRTS -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+01"
-                                    class="card-img-top" alt="Men's T-Shirt">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Dry-Fit Performance Tee</h5>
-                                    <p class="card-text text-muted mb-2">Men / T-Shirt</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 899</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
+
+
+
+            <!-- APPARELS PRODUCT SECTION - New Content Here -->
+            <section id="apparelsSection" class="py-5" style="background-color: var(--spikeit-light);">
+                <div class="container">
+                    <h2 class="text-center fw-bold mb-3 display-6" style="color: var(--spikeit-dark);">
+                        Shop By Category
+                    </h2>
+                    <p class="text-center text-muted mb-5">
+                        Explore our range of performance and casual wear for all athletes.
+                    </p>
+
+                    <!-- PRIMARY Filter: Gender/Category Tabs -->
+                    <ul class="nav nav-tabs justify-content-center mb-4" id="genderFilter" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="men-tab" data-bs-toggle="tab" data-bs-target="#menTab"
+                                type="button" role="tab" aria-controls="menTab" aria-selected="true"
+                                onclick="filterType('men', 'all')">Men</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="women-tab" data-bs-toggle="tab" data-bs-target="#womenTab"
+                                type="button" role="tab" aria-controls="womenTab" aria-selected="false"
+                                onclick="filterType('women', 'all')">Women</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="kids-tab" data-bs-toggle="tab" data-bs-target="#kidsTab"
+                                type="button" role="tab" aria-controls="kidsTab" aria-selected="false"
+                                onclick="filterType('kids', 'all')">Kids</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="unisex-tab" data-bs-toggle="tab" data-bs-target="#unisexTab"
+                                type="button" role="tab" aria-controls="unisexTab" aria-selected="false"
+                                onclick="filterType('unisex', 'all')">Unisex</button>
+                        </li>
+                    </ul>
+
+                    <!-- Tab Content (Product Grid Container) -->
+                    <div class="tab-content">
+                        <!-- ================================= MEN'S APPAREL TAB ================================= -->
+                        <div class="tab-pane fade show active" id="menTab" role="tabpanel" aria-labelledby="men-tab">
+
+                            <!-- SECONDARY Filter: Product Type Pills (Specific to the active tab) -->
+                            <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-men">
+                                <button class="btn btn-outline-dark filter-type active" data-type="all"
+                                    onclick="filterType('men', 'all')">All Men's</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="tshirt"
+                                    onclick="filterType('men', 'tshirt')">T-Shirts</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="shorts"
+                                    onclick="filterType('men', 'shorts')">Shorts</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
+                                    onclick="filterType('men', 'tracksuit')">Tracksuits</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="trackpant"
+                                    onclick="filterType('men', 'trackpant')">Track Pants</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="jersey"
+                                    onclick="filterType('men', 'jersey')">Jersey Sets</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="jacket"
+                                    onclick="filterType('men', 'jacket')">Jackets</button>
+                            </div>
+
+                            <div class="row" id="productGrid-men">
+                                <!-- MEN's T-SHIRTS -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+01"
+                                            class="card-img-top" alt="Men's T-Shirt">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Dry-Fit Performance Tee</h5>
+                                            <p class="card-text text-muted mb-2">Men / T-Shirt</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 899</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MEN's SHORTS -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+01"
+                                            class="card-img-top" alt="Men's Shorts">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Quick-Dry Athletic Shorts</h5>
+                                            <p class="card-text text-muted mb-2">Men / Shorts</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 1,050</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MEN's TRACKSUITS -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item men tracksuit">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Tracksuit+01"
+                                            class="card-img-top" alt="Men's Tracksuit">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Elite Training Tracksuit</h5>
+                                            <p class="card-text text-muted mb-2">Men / Tracksuit</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 3,999</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MEN's JACKETS -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item men jacket">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/6c757d/ffffff?text=Men's+Jacket+01"
+                                            class="card-img-top" alt="Men's Jacket">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Lightweight Windbreaker</h5>
+                                            <p class="card-text text-muted mb-2">Men / Jacket</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 1,899</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- MEN's SHORTS -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+01"
-                                    class="card-img-top" alt="Men's Shorts">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Quick-Dry Athletic Shorts</h5>
-                                    <p class="card-text text-muted mb-2">Men / Shorts</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 1,050</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
+                        <!-- ================================= WOMEN'S APPAREL TAB ================================= -->
+                        <div class="tab-pane fade" id="womenTab" role="tabpanel" aria-labelledby="women-tab">
+                            <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-women">
+                                <button class="btn btn-outline-dark filter-type active" data-type="all"
+                                    onclick="filterType('women', 'all')">All Women's</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="tshirt"
+                                    onclick="filterType('women', 'tshirt')">T-Shirts</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="shorts"
+                                    onclick="filterType('women', 'shorts')">Shorts</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
+                                    onclick="filterType('women', 'tracksuit')">Tracksuits</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="trackpant"
+                                    onclick="filterType('women', 'trackpant')">Track Pants</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="jacket"
+                                    onclick="filterType('women', 'jacket')">Jackets</button>
+                            </div>
+                            <div class="row" id="productGrid-women">
+                                <!-- WOMEN's T-SHIRT -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee"
+                                            class="card-img-top" alt="Women's Training Tee">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Aero-Cool Training Tee</h5>
+                                            <p class="card-text text-muted mb-2">Women / T-Shirt</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 799</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- WOMEN's SHORTS -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts"
+                                            class="card-img-top" alt="Women's Shorts">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Running Flow Shorts</h5>
+                                            <p class="card-text text-muted mb-2">Women / Shorts</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 950</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- WOMEN's TRACK PANT -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant"
+                                            class="card-img-top" alt="Women's Track Pants">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Cuffed Lifestyle Joggers</h5>
+                                            <p class="card-text text-muted mb-2">Women / Track Pants</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 1,799</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- MEN's TRACKSUITS -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item men tracksuit">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Tracksuit+01"
-                                    class="card-img-top" alt="Men's Tracksuit">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Elite Training Tracksuit</h5>
-                                    <p class="card-text text-muted mb-2">Men / Tracksuit</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 3,999</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
+                        <!-- ================================= KIDS' APPAREL TAB ================================= -->
+                        <div class="tab-pane fade" id="kidsTab" role="tabpanel" aria-labelledby="kids-tab">
+                            <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-kids">
+                                <button class="btn btn-outline-dark filter-type active" data-type="all"
+                                    onclick="filterType('kids', 'all')">All Kids'</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="tshirt"
+                                    onclick="filterType('kids', 'tshirt')">T-Shirts</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="shorts"
+                                    onclick="filterType('kids', 'shorts')">Shorts</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
+                                    onclick="filterType('kids', 'tracksuit')">Tracksuits</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="jersey"
+                                    onclick="filterType('kids', 'jersey')">Jersey Sets</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="jacket"
+                                    onclick="filterType('kids', 'jacket')">Jackets</button>
+                            </div>
+                            <div class="row" id="productGrid-kids">
+                                <!-- KIDS' T-SHIRT -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item kids tshirt">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/00b4d8/ffffff?text=Kids+Tee"
+                                            class="card-img-top" alt="Kids T-Shirt">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Youth Graphic Tee</h5>
+                                            <p class="card-text text-muted mb-2">Kids / T-Shirt</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 550</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- KIDS' SHORTS -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item kids shorts">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/457b9d/ffffff?text=Kids+Shorts"
+                                            class="card-img-top" alt="Kids Shorts">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Playtime Athletic Shorts</h5>
+                                            <p class="card-text text-muted mb-2">Kids / Shorts</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 499</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- KIDS' JERSEY SET -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item kids jersey">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/90be6d/000000?text=Kids+Jersey+Set"
+                                            class="card-img-top" alt="Kids Jersey Set">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Team Practice Jersey Set</h5>
+                                            <p class="card-text text-muted mb-2">Kids / Jersey Set</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 1,299</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- MEN's JACKETS -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item men jacket">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/6c757d/ffffff?text=Men's+Jacket+01"
-                                    class="card-img-top" alt="Men's Jacket">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Lightweight Windbreaker</h5>
-                                    <p class="card-text text-muted mb-2">Men / Jacket</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 1,899</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
+                        <!-- ================================= UNISEX APPAREL TAB ================================= -->
+                        <div class="tab-pane fade" id="unisexTab" role="tabpanel" aria-labelledby="unisex-tab">
+                            <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-unisex">
+                                <button class="btn btn-outline-dark filter-type active" data-type="all"
+                                    onclick="filterType('unisex', 'all')">All Unisex</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="tshirt"
+                                    onclick="filterType('unisex', 'tshirt')">T-Shirts</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
+                                    onclick="filterType('unisex', 'tracksuit')">Tracksuits</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="trackpant"
+                                    onclick="filterType('unisex', 'trackpant')">Track Pants</button>
+                                <button class="btn btn-outline-dark filter-type" data-type="jacket"
+                                    onclick="filterType('unisex', 'jacket')">Jackets</button>
+                            </div>
+                            <div class="row" id="productGrid-unisex">
+                                <!-- UNISEX TRACKSUIT -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tracksuit">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tracksuit"
+                                            class="card-img-top" alt="Unisex Tracksuit">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Pro-Fit Full Tracksuit</h5>
+                                            <p class="card-text text-muted mb-2">Unisex / Tracksuit</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 4,500</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- UNISEX JACKET -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex jacket">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/14213d/ffffff?text=Unisex+Jacket"
+                                            class="card-img-top" alt="Unisex Rain Jacket">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Waterproof Rain Jacket</h5>
+                                            <p class="card-text text-muted mb-2">Unisex / Jacket</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 2,200</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- UNISEX TRACK PANT -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant">
+                                    <div class="card product-card shadow-sm">
+                                        <img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant"
+                                            class="card-img-top" alt="Unisex Track Pant">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">Warm-up Track Pants</h5>
+                                            <p class="card-text text-muted mb-2">Unisex / Track Pants</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price-text">₹ 1,599</span>
+                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
+                                                        class="bi bi-cart-plus me-1"></i> Add</a>
+                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- ================================= WOMEN'S APPAREL TAB ================================= -->
-                <div class="tab-pane fade" id="womenTab" role="tabpanel" aria-labelledby="women-tab">
-                    <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-women">
-                        <button class="btn btn-outline-dark filter-type active" data-type="all"
-                            onclick="filterType('women', 'all')">All Women's</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="tshirt"
-                            onclick="filterType('women', 'tshirt')">T-Shirts</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="shorts"
-                            onclick="filterType('women', 'shorts')">Shorts</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
-                            onclick="filterType('women', 'tracksuit')">Tracksuits</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="trackpant"
-                            onclick="filterType('women', 'trackpant')">Track Pants</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="jacket"
-                            onclick="filterType('women', 'jacket')">Jackets</button>
-                    </div>
-                    <div class="row" id="productGrid-women">
-                        <!-- WOMEN's T-SHIRT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee"
-                                    class="card-img-top" alt="Women's Training Tee">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Aero-Cool Training Tee</h5>
-                                    <p class="card-text text-muted mb-2">Women / T-Shirt</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 799</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- WOMEN's SHORTS -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts"
-                                    class="card-img-top" alt="Women's Shorts">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Running Flow Shorts</h5>
-                                    <p class="card-text text-muted mb-2">Women / Shorts</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 950</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- WOMEN's TRACK PANT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant"
-                                    class="card-img-top" alt="Women's Track Pants">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Cuffed Lifestyle Joggers</h5>
-                                    <p class="card-text text-muted mb-2">Women / Track Pants</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 1,799</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ================================= KIDS' APPAREL TAB ================================= -->
-                <div class="tab-pane fade" id="kidsTab" role="tabpanel" aria-labelledby="kids-tab">
-                    <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-kids">
-                        <button class="btn btn-outline-dark filter-type active" data-type="all"
-                            onclick="filterType('kids', 'all')">All Kids'</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="tshirt"
-                            onclick="filterType('kids', 'tshirt')">T-Shirts</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="shorts"
-                            onclick="filterType('kids', 'shorts')">Shorts</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
-                            onclick="filterType('kids', 'tracksuit')">Tracksuits</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="jersey"
-                            onclick="filterType('kids', 'jersey')">Jersey Sets</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="jacket"
-                            onclick="filterType('kids', 'jacket')">Jackets</button>
-                    </div>
-                    <div class="row" id="productGrid-kids">
-                        <!-- KIDS' T-SHIRT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item kids tshirt">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/00b4d8/ffffff?text=Kids+Tee"
-                                    class="card-img-top" alt="Kids T-Shirt">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Youth Graphic Tee</h5>
-                                    <p class="card-text text-muted mb-2">Kids / T-Shirt</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 550</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- KIDS' SHORTS -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item kids shorts">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/457b9d/ffffff?text=Kids+Shorts"
-                                    class="card-img-top" alt="Kids Shorts">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Playtime Athletic Shorts</h5>
-                                    <p class="card-text text-muted mb-2">Kids / Shorts</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 499</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- KIDS' JERSEY SET -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item kids jersey">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/90be6d/000000?text=Kids+Jersey+Set"
-                                    class="card-img-top" alt="Kids Jersey Set">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Team Practice Jersey Set</h5>
-                                    <p class="card-text text-muted mb-2">Kids / Jersey Set</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 1,299</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ================================= UNISEX APPAREL TAB ================================= -->
-                <div class="tab-pane fade" id="unisexTab" role="tabpanel" aria-labelledby="unisex-tab">
-                    <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-unisex">
-                        <button class="btn btn-outline-dark filter-type active" data-type="all"
-                            onclick="filterType('unisex', 'all')">All Unisex</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="tshirt"
-                            onclick="filterType('unisex', 'tshirt')">T-Shirts</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
-                            onclick="filterType('unisex', 'tracksuit')">Tracksuits</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="trackpant"
-                            onclick="filterType('unisex', 'trackpant')">Track Pants</button>
-                        <button class="btn btn-outline-dark filter-type" data-type="jacket"
-                            onclick="filterType('unisex', 'jacket')">Jackets</button>
-                    </div>
-                    <div class="row" id="productGrid-unisex">
-                        <!-- UNISEX TRACKSUIT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tracksuit">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tracksuit"
-                                    class="card-img-top" alt="Unisex Tracksuit">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Pro-Fit Full Tracksuit</h5>
-                                    <p class="card-text text-muted mb-2">Unisex / Tracksuit</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 4,500</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- UNISEX JACKET -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex jacket">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/14213d/ffffff?text=Unisex+Jacket"
-                                    class="card-img-top" alt="Unisex Rain Jacket">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Waterproof Rain Jacket</h5>
-                                    <p class="card-text text-muted mb-2">Unisex / Jacket</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 2,200</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- UNISEX TRACK PANT -->
-                        <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant">
-                            <div class="card product-card shadow-sm">
-                                <img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant"
-                                    class="card-img-top" alt="Unisex Track Pant">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold">Warm-up Track Pants</h5>
-                                    <p class="card-text text-muted mb-2">Unisex / Track Pants</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="price-text">₹ 1,599</span>
-                                        <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                class="bi bi-cart-plus me-1"></i> Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-
-
-    <section
-        class="hero-banner position-relative text-center text-white d-flex align-items-center justify-content-center">
-
-        <div class="hero-bg-image"></div>
-
-        <div class="container position-relative z-1 py-5">
-
-            <h1 class="hero-brand-logo mb-5">SPIKE IT</h1>
-
-            <h2 class="display-4 fw-bold mb-4" style="font-size: 20px;">MOVE UP BY SIGNING UP</h2>
-
-            <form class="subscription-form mx-auto" style="max-width: 450px;">
-
-                <div class="input-group mb-3 form-fields">
-                    <input type="email" class="form-control py-3" placeholder="Enter your email..."
-                        aria-label="Enter your email" required>
-                    <button class="btn btn-light btn-lg px-4" type="submit">Submit</button>
-                </div>
-
-                <div class="submission-success-message text-center" style="display: none;">
-                    <h4 class="text-white fw-light">Thank You for Moving Up!</h4>
-                    <p class="text-light">Your email has been successfully subscribed.</p>
-                </div>
-            </form>
-        </div>
-    </section>
-
-
-
-    <!-- footer -->
-    <footer class="bg-dark text-white pt-4">
-
-        <div class="container-fluid bg-dark text-center border-bottom border-secondary py-3">
-            <div class="row">
-                <div class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-truck me-2"></i> Free shipping on orders above Rs. 999
-                </div>
-                <div
-                    class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center border-start border-end border-secondary">
-                    <i class="bi bi-wallet me-2"></i> Cash On Delivery
-                </div>
-                <div class="col-md-4 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-arrow-return-left me-2"></i> Return policy (Upto 7 days)
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid py-5 footer-main-content position-relative">
-
-            <div class="footer-bg-image"></div>
-
-            <div class="container position-relative z-1">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
-                        <h5 class="text-uppercase mb-3">COMPANY</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Blogs</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Catalogues</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Compliance</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Terms And Conditions</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Refund Policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
-                        <h5 class="text-uppercase mb-3">NIVIA AFFILIATION</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white text-decoration-none">AIFF</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">ISL</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Bhutan Football Federation</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Srilankan Football Federation</a>
-                            </li>
-                            <li><a href="#" class="text-white text-decoration-none">BFI</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">VFI</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4">
-                        <h5 class="text-uppercase mb-3">CONNECT WITH US</h5>
-                        <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 9115497521</p>
-                        <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> contact@nivia.in</p>
-                        <p class="mb-1"><i class="bi bi-clock-fill me-2"></i> 9AM - 6PM</p>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <div class="container-fluid text-center border-top border-secondary py-3">
-            <div class="row d-flex align-items-center justify-content-between">
-                <div class="col-md-4 text-start">
-                    &copy; 2025 Niviasports
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <section
+                class="hero-banner position-relative text-center text-white d-flex align-items-center justify-content-center">
+
+                <div class="hero-bg-image"></div>
+
+                <div class="container position-relative z-1 py-5">
+
+                    <h1 class="hero-brand-logo mb-5">SPIKE IT</h1>
+
+                    <h2 class="display-4 fw-bold mb-4" style="font-size: 20px;">MOVE UP BY SIGNING UP</h2>
+
+                    <form class="subscription-form mx-auto" style="max-width: 450px;">
+
+                        <div class="input-group mb-3 form-fields">
+                            <input type="email" class="form-control py-3" placeholder="Enter your email..."
+                                aria-label="Enter your email" required>
+                            <button class="btn btn-light btn-lg px-4" type="submit">Submit</button>
+                        </div>
+
+                        <div class="submission-success-message text-center" style="display: none;">
+                            <h4 class="text-white fw-light">Thank You for Moving Up!</h4>
+                            <p class="text-light">Your email has been successfully subscribed.</p>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-md-4 text-center">
-                    Design Partners: Intent Global
+            </section>
+
+
+
+            <footer class="bg-dark text-white pt-4">
+
+                <div class="container-fluid bg-dark text-center border-bottom border-secondary py-3">
+                    <div class="row">
+                        <div class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center">
+                            <i class="bi bi-truck me-2"></i> Free shipping on orders above Rs. 999
+                        </div>
+                        <div
+                            class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center border-start border-end border-secondary">
+                            <i class="bi bi-wallet me-2"></i> Cash On Delivery
+                        </div>
+                        <div class="col-md-4 d-flex align-items-center justify-content-center">
+                            <i class="bi bi-arrow-return-left me-2"></i> Return policy (Upto 7 days)
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 text-end social-icons">
-                    <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
-                    <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
-                    <a href="#" class="text-white me-3"><i class="bi bi-twitter-x fs-5"></i></a>
-                    <a href="#" class="text-white"><i class="bi bi-youtube fs-5"></i></a>
+
+                <div class="container-fluid py-5 footer-main-content position-relative">
+
+                    <div class="footer-bg-image"></div>
+
+                    <div class="container position-relative z-1">
+                        <div class="row">
+
+                            <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+                                <h5 class="text-uppercase mb-3">COMPANY</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+                                    <li><a href="about-us.html" class="text-white text-decoration-none">Contact Us</a>
+                                    </li>
+                                    <li><a href="blog.html" class="text-white text-decoration-none">Blogs</a></li>
+                                    <li><a href="#" class="text-white text-decoration-none">Catalogues</a></li>
+                                    <li><a href="#" class="text-white text-decoration-none">Compliance</a></li>
+                                    <li><a href="terms.html" class="text-white text-decoration-none">Terms And
+                                            Conditions</a></li>
+                                    <li><a href="privacy.html" class="text-white text-decoration-none">Privacy
+                                            Policy</a></li>
+                                    <li><a href="refund.html" class="text-white text-decoration-none">Refund Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+                                <h5 class="text-uppercase mb-3">SPIKEIT</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-white text-decoration-none">AIFF</a></li>
+                                    <li><a href="#" class="text-white text-decoration-none">ISL</a></li>
+                                    <li><a href="#" class="text-white text-decoration-none">Bhutan Football
+                                            Federation</a></li>
+                                    <li><a href="#" class="text-white text-decoration-none">Srilankan Football
+                                            Federation</a>
+                                    </li>
+                                    <li><a href="#" class="text-white text-decoration-none">BFI</a></li>
+                                    <li><a href="#" class="text-white text-decoration-none">VFI</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4">
+                                <h5 class="text-uppercase mb-3">CONNECT WITH US</h5>
+                                <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 7012056376</p>
+                                <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> ahamedansarnasim@gmail.com</p>
+                                <p class="mb-1"><i class="bi bi-clock-fill me-2"></i> 9AM - 6PM</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </footer>
 
-    <!-- Bootstrap JS -->
+                <div class="container-fluid text-center border-top border-secondary py-3">
+                    <div class="row d-flex align-items-center justify-content-between">
+                        <div class="col-md-4 text-start">
+                            &copy; 2025 SPIKEIT
+                        </div>
+                        <div class="col-md-4 text-center">
+                            Design Partners: Intent Global
+                        </div>
+                        <div class="col-md-4 text-end social-icons">
+                            <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+                            <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+                            <a href="#" class="text-white me-3"><i class="bi bi-twitter-x fs-5"></i></a>
+                            <a href="#" class="text-white"><i class="bi bi-youtube fs-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
+            <!-- Bootstrap JS -->
 
-    <!-- Navbar Scroll Script -->
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <!-- ✅ Bootstrap CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+            <!-- ✅ Bootstrap Icons -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+                rel="stylesheet">
 
-    <!-- jQuery (must be before your custom JS if they use it) -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+            <!-- ✅ jQuery -->
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <!-- Custom JS -->
-    <script src="/spiikeit fitness/javascript/card2.js"></script>
-    <script src="/spiikeit fitness/javascript/email.js"></script>
-    <script src="/spiikeit fitness/javascript/new-arrivals.js"></script>
+            <!-- ✅ Bootstrap JS Bundle -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+            <!-- ✅ Custom JS -->
+            <script src="/spiikeit fitness/javascript/card2.js"></script>
+            <script src="/spiikeit fitness/javascript/email.js"></script>
+            <script src="/spiikeit fitness/javascript/new-arrivals.js"></script>
+            <script src="javascript/cart.js"></script>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- ✅ Dropdown Hover Script -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    if (window.innerWidth > 992) {
+                        document.querySelectorAll(".navbar .dropdown").forEach(function (dropdown) {
+                            dropdown.addEventListener("mouseenter", function () {
+                                const toggle = dropdown.querySelector(".dropdown-toggle");
+                                const menu = new bootstrap.Dropdown(toggle);
+                                menu.show();
+                            });
+                            dropdown.addEventListener("mouseleave", function () {
+                                const toggle = dropdown.querySelector(".dropdown-toggle");
+                                const menu = new bootstrap.Dropdown(toggle);
+                                menu.hide();
+                            });
+                        });
+                    }
+                });
+            </script>
 
-    <!-- Navbar Scroll Script -->
-    <script>
-        window.addEventListener('scroll', function () {
-            const header = document.getElementById('mainHeader');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
-     <script>
-    window.addEventListener("scroll", () => {
-      const navbar = document.querySelector(".custom-navbar");
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    });
-  </script>
+            <!-- ✅ Navbar Scroll Script -->
+            <script>
+                window.addEventListener("scroll", () => {
+                    const header = document.getElementById("mainHeader");
+                    const navbar = document.querySelector(".custom-navbar");
+                    if (window.scrollY > 50) {
+                        header?.classList.add("scrolled");
+                        navbar?.classList.add("scrolled");
+                    } else {
+                        header?.classList.remove("scrolled");
+                        navbar?.classList.remove("scrolled");
+                    }
+                });
+            </script>
 
+            <!-- ✅ Add to Cart & Wishlist Logic -->
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+                    // Add to Cart Buttons
+                    const addToCartButtons = document.querySelectorAll(".btn-add-cart, .btn-outline-dark, .btn-outline-light");
+                    addToCartButtons.forEach(button => {
+                        button.addEventListener("click", (e) => {
+                            e.preventDefault();
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                            const card = button.closest(".product-card, .card, .product-item");
+                            if (!card) return;
 
-    <!-- Custom JavaScript -->
-    <script>
-        // Navbar Scroll Script
-       
+                            const nameEl = card.querySelector(".card-title, .product-title, h5");
+                            const name = (nameEl && nameEl.textContent.trim()) || "Unnamed Product";
 
-        // Two-Tier Product Filtering Logic
-        function filterType(gender, type) {
-            // 1. Get the current product grid container for the active gender
-            const productGrid = document.getElementById(`productGrid-${gender}`);
-            if (!productGrid) return; // Exit if the container doesn't exist
+                            const priceEl = card.querySelector(".price-text, .card-price, .product-price, p.fw-bold");
+                            const priceText = priceEl ? priceEl.textContent.replace(/[^\d.-]/g, '') : "0";
+                            const price = parseInt(priceText, 10) || 0;
 
-            const productItems = productGrid.querySelectorAll('.product-item');
+                            const image = card.querySelector("img")?.src || "";
+                            const idFromAttr = card.getAttribute("data-id");
+                            const id = idFromAttr || name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9\-]/g, "");
 
-            // 2. Update active button state for the secondary filter (Product Type)
-            // Ensure we are only targeting the buttons specific to the current gender tab
-            const typeFilterButtons = document.querySelectorAll(`#secondaryFilter-${gender} .filter-type`);
-            typeFilterButtons.forEach(button => {
-                if (button.dataset.type === type) {
-                    button.classList.add('active');
-                } else {
-                    button.classList.remove('active');
+                            const product = { id, name, price, image, qty: 1 };
+
+                            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                            const existing = cart.find(item => item.id === product.id);
+                            if (existing) {
+                                existing.qty += 1;
+                            } else {
+                                cart.push(product);
+                            }
+                            localStorage.setItem("cart", JSON.stringify(cart));
+                            updateCartCount();
+
+                            alert(`${name} added to cart successfully! 🛒`);
+                        });
+                    });
+
+                    // Wishlist Buttons
+                    const wishlistButtons = document.querySelectorAll(".wishlist-btn");
+                    wishlistButtons.forEach(button => {
+                        button.addEventListener("click", (e) => {
+                            e.preventDefault();
+
+                            const card = button.closest(".product-card, .card, .product-item");
+                            if (!card) return;
+
+                            const nameEl = card.querySelector(".card-title, .product-title, h5");
+                            const name = (nameEl && nameEl.textContent.trim()) || "Unnamed Product";
+
+                            const priceEl = card.querySelector(".price-text, .card-price, .product-price, p.fw-bold");
+                            const priceText = priceEl ? priceEl.textContent.replace(/[^\d.-]/g, '') : "0";
+                            const price = parseInt(priceText, 10) || 0;
+
+                            const image = card.querySelector("img")?.src || "";
+                            const idFromAttr = card.getAttribute("data-id");
+                            const id = idFromAttr || name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9\-]/g, "");
+
+                            const wishlistItem = { id, name, price, image };
+
+                            let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+                            const exists = wishlist.find(item => item.id === wishlistItem.id);
+
+                            if (!exists) {
+                                wishlist.push(wishlistItem);
+                                localStorage.setItem("wishlist", JSON.stringify(wishlist));
+                                alert(`${name} added to wishlist ❤️`);
+                            } else {
+                                alert(`${name} is already in your wishlist!`);
+                            }
+
+                            updateWishlistCount();
+                        });
+                    });
+
+                    // Wishlist Icon Toggle
+                    document.querySelectorAll('.wishlist-btn').forEach(btn => {
+                        btn.addEventListener('click', function () {
+                            const icon = this.querySelector('i');
+                            icon.classList.toggle('fa-regular');
+                            icon.classList.toggle('fa-solid');
+                            icon.classList.toggle('text-danger');
+                        });
+                    });
+
+                    // Cart & Wishlist Counters
+                    function updateCartCount() {
+                        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                        const total = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+                        const el = document.querySelector(".cart-count");
+                        if (el) el.textContent = total;
+                    }
+
+                    function updateWishlistCount() {
+                        const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+                        const el = document.querySelector(".wishlist-count");
+                        if (el) el.textContent = wishlist.length;
+                    }
+
+                    // Initialize counts on page load
+                    updateCartCount();
+                    updateWishlistCount();
+                });
+            </script>
+
+            <!-- ✅ Product Filtering -->
+            <script>
+                function filterProducts(sport) {
+                    const productItems = document.querySelectorAll('.product-item');
+                    const navLinks = document.querySelectorAll('#sportFilter .nav-link');
+
+                    navLinks.forEach(link => {
+                        if (link.dataset.filter === sport) link.classList.add('active');
+                        else link.classList.remove('active');
+                    });
+
+                    productItems.forEach(item => {
+                        if (sport === 'all' || item.classList.contains(sport)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
                 }
-            });
+            </script>
 
-            // 3. Filter products within the current grid
-            let hasVisibleProducts = false;
-            productItems.forEach(item => {
-                // The item must belong to the correct gender (handled by the tab) and the selected product type
-                const isVisible = (type === 'all' || item.classList.contains(type));
+            <!-- ✅ Two-Tier Product Filtering -->
+            <script>
+                function filterType(gender, type) {
+                    const productGrid = document.getElementById(`productGrid-${gender}`);
+                    if (!productGrid) return;
 
-                if (isVisible) {
-                    item.style.display = 'block';
-                    hasVisibleProducts = true;
-                } else {
-                    item.style.display = 'none';
+                    const productItems = productGrid.querySelectorAll('.product-item');
+                    const typeFilterButtons = document.querySelectorAll(`#secondaryFilter-${gender} .filter-type`);
+
+                    typeFilterButtons.forEach(button => {
+                        if (button.dataset.type === type) button.classList.add('active');
+                        else button.classList.remove('active');
+                    });
+
+                    productItems.forEach(item => {
+                        const isVisible = (type === 'all' || item.classList.contains(type));
+                        item.style.display = isVisible ? 'block' : 'none';
+                    });
                 }
-            });
-
-            // 4. Handle empty results (optional: hide this logic since we now guarantee products)
-        }
-    </script>
-
-
-
+            </script>
 </body>
 
 </html>

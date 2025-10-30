@@ -91,7 +91,7 @@
          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/new-arrival.html">New Arrivals</a></li>
           <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/accessories.html">Accessories</a></li>
           <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/appearels.html">Apparels</a></li>
-          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/about-us.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/spiikeit fitness/about-us.html">Get in touch</a></li>
 
         </ul>
 
@@ -244,65 +244,68 @@
     </footer>
 
   <!-- Wishlist Script -->
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const wishlistContainer = document.getElementById("wishlistContainer");
-    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const wishlistContainer = document.getElementById("wishlistContainer");
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-    if (wishlist.length === 0) {
-      wishlistContainer.innerHTML = `
-        <div class="text-center py-5 bg-white rounded shadow-sm col-lg-3 col-md-3 col-sm-6 ">
-          <h4>Your wishlist is empty 💔</h4>
-          <a href="index.html" class="btn btn-primary mt-3">Back to Shop</a>
-        </div>`;
-      return;
-    }
+  if (wishlist.length === 0) {
+    wishlistContainer.innerHTML = `
+      <div class="text-center py-5 bg-white rounded shadow-sm col-lg-3 col-md-3 col-sm-6 ">
+        <h4>Your wishlist is empty 💔</h4>
+        <a href="index.html" class="btn btn-primary mt-3">Back to Shop</a>
+      </div>`;
+    return;
+  }
 
-    wishlistContainer.innerHTML = wishlist.map((item, index) => `
-      <div class="col-md-4 col-sm-6">
-        <div class="card wishlist-card border-0 shadow-sm">
-          <img src="${item.image}" class="card-img-top" alt="${item.name}">
-          <div class="card-body text-center">
-            <h6 class="fw-semibold mb-1">${item.name}</h6>
-            <p class="text-dark fw-bold mb-2">₹${item.price}</p>
-            <div class="d-flex justify-content-center gap-2">
-              <button class="btn btn-outline-danger btn-sm remove-btn" data-index="${index}">
-                <i class="fa-solid fa-trash"></i> Remove
-              </button>
-              <button class="btn btn-dark btn-sm add-cart-btn" data-index="${index}">
-                <i class="fa-solid fa-cart-plus"></i> Add to Cart
-              </button>
-            </div>
+  wishlistContainer.innerHTML = wishlist.map((item, index) => `
+    <div class="col-md-4 col-sm-6">
+      <div class="card wishlist-card border-0 shadow-sm">
+        <img src="${item.image}" class="card-img-top" alt="${item.name}">
+        <div class="card-body text-center">
+          <h6 class="fw-semibold mb-1">${item.name}</h6>
+          <p class="text-dark fw-bold mb-2">₹${item.price}</p>
+          <div class="d-flex justify-content-center gap-2">
+            <button class="btn btn-outline-danger btn-sm remove-btn" data-index="${index}">
+              <i class="fa-solid fa-trash"></i> Remove
+            </button>
+            <button class="btn btn-dark btn-sm add-cart-btn" data-index="${index}">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
           </div>
         </div>
       </div>
-    `).join("");
+    </div>
+  `).join("");
 
-    // ✅ Remove item
-    document.querySelectorAll(".remove-btn").forEach(btn => {
-      btn.addEventListener("click", e => {
-        const index = e.target.closest("button").dataset.index;
-        wishlist.splice(index, 1);
-        localStorage.setItem("wishlist", JSON.stringify(wishlist));
-        location.reload();
-      });
-    });
-
-    // ✅ Add to Cart
-    document.querySelectorAll(".add-cart-btn").forEach(btn => {
-      btn.addEventListener("click", e => {
-        const index = e.target.closest("button").dataset.index;
-        const item = wishlist[index];
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const existing = cart.find(p => p.id === item.id);
-        if (existing) existing.qty += 1;
-        else cart.push({ ...item, qty: 1 });
-        localStorage.setItem("cart", JSON.stringify(cart));
-        alert(`${item.name} added to cart 🛒`);
-      });
+  // ✅ Remove item from wishlist
+  document.querySelectorAll(".remove-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const index = e.target.closest("button").dataset.index;
+      wishlist.splice(index, 1);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      updateWishlistCount(); // update badge immediately
+      location.reload();
     });
   });
-  </script>
+
+  // ✅ Add to Cart from wishlist
+  document.querySelectorAll(".add-cart-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const index = e.target.closest("button").dataset.index;
+      const item = wishlist[index];
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(p => p.id === item.id);
+      if (existing) existing.qty += 1;
+      else cart.push({ ...item, qty: 1 });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount(); // 🔥 instantly update navbar cart badge
+      alert(`${item.name} added to cart 🛒`);
+    });
+  });
+});
+</script>
+
 
   <script>
 /* ---- Wishlist badge helper (drop into your existing scripts) ---- */

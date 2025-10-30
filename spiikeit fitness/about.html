@@ -23,6 +23,25 @@
             color: #fff;
         }
 
+        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
+   
+    .hero h1 { font-size: 3rem; font-weight: 700; }
+    .counter {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #198754;
+    }
+    .team-card img {
+      height: 220px;
+      object-fit: cover;
+    }
+    .section-title {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #198754;
+    }
+   
         .product-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
@@ -69,7 +88,7 @@
 
         .hero-section {
             height: 80vh;
-            background: url('/images/getin.jpg ') center/cover no-repeat;
+            background: url('/images/contact.jpg ') center/cover no-repeat;
             position: relative;
             display: flex;
             align-items: center;
@@ -283,6 +302,72 @@
 
 
 
+<!-- 🏆 Our Story -->
+  <section class="container my-5" data-aos="fade-up">
+    <div class="row align-items-center g-4">
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=900&q=80" class="img-fluid rounded" alt="Our Story">
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-3 text-success">Our Journey</h2>
+        <p>Founded in 2023, <strong>Spike It Sports</strong> began with a mission to provide quality sports gear for every level of athlete. From local tournaments to national championships, we’ve been part of countless victories.</p>
+        <p>Our team constantly researches and tests equipment to ensure performance, durability, and comfort — so athletes can focus on what truly matters: <em>winning the game.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📈 Achievements -->
+  <section class="py-5 bg-light text-center" data-aos="zoom-in">
+    <h2 class="section-title">Our Achievements</h2>
+    <div class="row justify-content-center g-4">
+      <div class="col-md-3">
+        <div class="counter" data-target="5000">0</div>
+        <p>Happy Customers</p>
+      </div>
+      <div class="col-md-3">
+        <div class="counter" data-target="120">0</div>
+        <p>Sports Categories</p>
+      </div>
+      <div class="col-md-3">
+        <div class="counter" data-target="50">0</div>
+        <p>Team Members</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 👥 Meet the Team -->
+  <section class="container my-5" data-aos="fade-up">
+    <h2 class="section-title">Meet Our Team</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card team-card shadow-sm border-0">
+          <img src="https://images.unsplash.com/photo-1603415526960-f7e0328ec9e1?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Founder">
+          <div class="card-body text-center">
+            <h5 class="fw-bold">Anshu Patel</h5>
+            <p class="text-muted">Founder & CEO</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card team-card shadow-sm border-0">
+          <img src="https://images.unsplash.com/photo-1603415526960-f7e0328ec9e1?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Marketing Lead">
+          <div class="card-body text-center">
+            <h5 class="fw-bold">Rahul Sharma</h5>
+            <p class="text-muted">Marketing Head</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card team-card shadow-sm border-0">
+          <img src="https://images.unsplash.com/photo-1603415526960-f7e0328ec9e1?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Tech Lead">
+          <div class="card-body text-center">
+            <h5 class="fw-bold">Priya Mehta</h5>
+            <p class="text-muted">Technology & E-commerce Lead</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
@@ -415,7 +500,31 @@
     <script src="/spiikeit fitness/javascript/email.js"></script>
     <script src="/spiikeit fitness/javascript/new-arrivals.js"></script>
     <script src="javascript/cart.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Initialize AOS animations
+    AOS.init({ duration: 1000 });
 
+    // Animated counters
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const speed = 50;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  </script>
 
 
 
@@ -562,7 +671,57 @@ const price = parseInt(priceText) || 0;
         });
     </script>
 
-   
+    <script>
+        $(document).ready(function() {
+            // Function to display a message to the user
+            function displayMessage(message, isSuccess) {
+                const messageBox = $('#formMessage');
+                messageBox.text(message);
+                messageBox.removeClass('text-success text-danger').addClass(isSuccess ? 'text-success' : 'text-danger');
+                messageBox.slideDown(300);
+            }
+
+            // Handle form submission using jQuery
+            $('#contactForm').on('submit', function(e) {
+                e.preventDefault(); // Prevent default form submission
+
+                // Simple client-side validation check (Bootstrap handles most of the HTML validation)
+                const name = $('#name').val().trim();
+                const email = $('#email').val().trim();
+                const subject = $('#subject').val().trim();
+                const message = $('#message').val().trim();
+
+                if (!name || !email || !subject || !message) {
+                    displayMessage('Please fill out all required fields.', false);
+                    return;
+                }
+                
+                // Simulate an API call or form submission delay
+                const submitButton = $(this).find('button[type="submit"]');
+                submitButton.prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...');
+                $('#formMessage').slideUp(100);
+
+                setTimeout(() => {
+                    // In a real application, you would send this data via AJAX here.
+                    // For this example, we simulate success.
+
+                    // Clear the form fields on successful submission
+                    $('#contactForm')[0].reset();
+                    
+                    displayMessage('Your message has been sent successfully! We will get back to you within 24 hours.', true);
+
+                    // Reset button state
+                    submitButton.prop('disabled', false).html('Submit Message');
+
+                    // Optional: Hide the success message after a few seconds
+                    setTimeout(() => {
+                        $('#formMessage').slideUp(500);
+                    }, 5000);
+
+                }, 2000); // 2 second delay to simulate network latency
+            });
+        });
+    </script>
 
 
 
