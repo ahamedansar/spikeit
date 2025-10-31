@@ -13,6 +13,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="/spiikeit fitness/style.css">
     <style>
+
+        body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+section, footer {
+    margin: 0;
+    padding: 0;
+}
+
+.container, .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+footer {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    width: 100%;
+}
+
         .btn-outline-primary {
             border-radius: 20px;
             transition: all 0.3s ease;
@@ -228,7 +251,7 @@
 
     <!-- Hero Section -->
 
-    <section class="hero-section" style="background: url('/images/fball.jpg')center/cover no-repeat;">
+    <section class="hero-section" style="background: url('/images/apparels\ banner.jpg')center/cover no-repeat;">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <img src="/spiikeit fitness/images/logo.png" alt="Spike It Logo">
@@ -241,401 +264,249 @@
 
 
 
-    <!-- ACCESSORIES PRODUCT SECTION - New Content Here -->
-    <section class="py-5" style="background-color: #f8f9fa;">
-        <div class="container">
-            <h2 class="text-center fw-bold mb-4 display-5" style="color: var(--spikeit-dark);">
-                Essential Sport Accessories
-            </h2>
-            <p class="text-center text-muted mb-5">
-                Browse our full collection of gear, equipment, and accessories.
-            </p>
+  
 
-
-            <!-- Filter Navigation (Pills) -->
+          
 
 
 
 
 
             <!-- APPARELS PRODUCT SECTION - New Content Here -->
-            <section id="apparelsSection" class="py-5" style="background-color: var(--spikeit-light);">
-                <div class="container">
-                    <h2 class="text-center fw-bold mb-3 display-6" style="color: var(--spikeit-dark);">
-                        Shop By Category
-                    </h2>
-                    <p class="text-center text-muted mb-5">
-                        Explore our range of performance and casual wear for all athletes.
-                    </p>
+        <section id="apparelsSection" class="py-5" style="background-color: var(--spikeit-light);">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-3 display-6" style="color: var(--spikeit-dark);">
+            Shop By Apparel Category
+        </h2>
+        <p class="text-center text-muted mb-5">
+            Explore our range of performance and casual wear for all athletes.
+        </p>
 
-                    <!-- PRIMARY Filter: Gender/Category Tabs -->
-                    <ul class="nav nav-tabs justify-content-center mb-4" id="genderFilter" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="men-tab" data-bs-toggle="tab" data-bs-target="#menTab"
-                                type="button" role="tab" aria-controls="menTab" aria-selected="true"
-                                onclick="filterType('men', 'all')">Men</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="women-tab" data-bs-toggle="tab" data-bs-target="#womenTab"
-                                type="button" role="tab" aria-controls="womenTab" aria-selected="false"
-                                onclick="filterType('women', 'all')">Women</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="kids-tab" data-bs-toggle="tab" data-bs-target="#kidsTab"
-                                type="button" role="tab" aria-controls="kidsTab" aria-selected="false"
-                                onclick="filterType('kids', 'all')">Kids</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="unisex-tab" data-bs-toggle="tab" data-bs-target="#unisexTab"
-                                type="button" role="tab" aria-controls="unisexTab" aria-selected="false"
-                                onclick="filterType('unisex', 'all')">Unisex</button>
-                        </li>
-                    </ul>
+        <ul class="nav nav-tabs justify-content-center mb-4" id="genderFilter" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="men-tab" data-bs-toggle="tab" data-bs-target="#menTab"
+                    type="button" role="tab" aria-controls="menTab" aria-selected="true"
+                    onclick="filterType('men', 'all')">Men</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="women-tab" data-bs-toggle="tab" data-bs-target="#womenTab"
+                    type="button" role="tab" aria-controls="womenTab" aria-selected="false"
+                    onclick="filterType('women', 'all')">Women</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="kids-tab" data-bs-toggle="tab" data-bs-target="#kidsTab"
+                    type="button" role="tab" aria-controls="kidsTab" aria-selected="false"
+                    onclick="filterType('kids', 'all')">Kids</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="unisex-tab" data-bs-toggle="tab" data-bs-target="#unisexTab"
+                    type="button" role="tab" aria-controls="unisexTab" aria-selected="false"
+                    onclick="filterType('unisex', 'all')">Unisex</button>
+            </li>
+        </ul>
 
-                    <!-- Tab Content (Product Grid Container) -->
-                    <div class="tab-content">
-                        <!-- ================================= MEN'S APPAREL TAB ================================= -->
-                        <div class="tab-pane fade show active" id="menTab" role="tabpanel" aria-labelledby="men-tab">
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="menTab" role="tabpanel" aria-labelledby="men-tab">
 
-                            <!-- SECONDARY Filter: Product Type Pills (Specific to the active tab) -->
-                            <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-men">
-                                <button class="btn btn-outline-dark filter-type active" data-type="all"
-                                    onclick="filterType('men', 'all')">All Men's</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="tshirt"
-                                    onclick="filterType('men', 'tshirt')">T-Shirts</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="shorts"
-                                    onclick="filterType('men', 'shorts')">Shorts</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
-                                    onclick="filterType('men', 'tracksuit')">Tracksuits</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="trackpant"
-                                    onclick="filterType('men', 'trackpant')">Track Pants</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="jersey"
-                                    onclick="filterType('men', 'jersey')">Jersey Sets</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="jacket"
-                                    onclick="filterType('men', 'jacket')">Jackets</button>
-                            </div>
-
-                            <div class="row" id="productGrid-men">
-                                <!-- MEN's T-SHIRTS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+01"
-                                            class="card-img-top" alt="Men's T-Shirt">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Dry-Fit Performance Tee</h5>
-                                            <p class="card-text text-muted mb-2">Men / T-Shirt</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 899</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- MEN's SHORTS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+01"
-                                            class="card-img-top" alt="Men's Shorts">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Quick-Dry Athletic Shorts</h5>
-                                            <p class="card-text text-muted mb-2">Men / Shorts</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 1,050</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- MEN's TRACKSUITS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item men tracksuit">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Tracksuit+01"
-                                            class="card-img-top" alt="Men's Tracksuit">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Elite Training Tracksuit</h5>
-                                            <p class="card-text text-muted mb-2">Men / Tracksuit</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 3,999</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- MEN's JACKETS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item men jacket">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/6c757d/ffffff?text=Men's+Jacket+01"
-                                            class="card-img-top" alt="Men's Jacket">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Lightweight Windbreaker</h5>
-                                            <p class="card-text text-muted mb-2">Men / Jacket</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 1,899</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ================================= WOMEN'S APPAREL TAB ================================= -->
-                        <div class="tab-pane fade" id="womenTab" role="tabpanel" aria-labelledby="women-tab">
-                            <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-women">
-                                <button class="btn btn-outline-dark filter-type active" data-type="all"
-                                    onclick="filterType('women', 'all')">All Women's</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="tshirt"
-                                    onclick="filterType('women', 'tshirt')">T-Shirts</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="shorts"
-                                    onclick="filterType('women', 'shorts')">Shorts</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
-                                    onclick="filterType('women', 'tracksuit')">Tracksuits</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="trackpant"
-                                    onclick="filterType('women', 'trackpant')">Track Pants</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="jacket"
-                                    onclick="filterType('women', 'jacket')">Jackets</button>
-                            </div>
-                            <div class="row" id="productGrid-women">
-                                <!-- WOMEN's T-SHIRT -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee"
-                                            class="card-img-top" alt="Women's Training Tee">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Aero-Cool Training Tee</h5>
-                                            <p class="card-text text-muted mb-2">Women / T-Shirt</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 799</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- WOMEN's SHORTS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts"
-                                            class="card-img-top" alt="Women's Shorts">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Running Flow Shorts</h5>
-                                            <p class="card-text text-muted mb-2">Women / Shorts</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 950</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- WOMEN's TRACK PANT -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant"
-                                            class="card-img-top" alt="Women's Track Pants">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Cuffed Lifestyle Joggers</h5>
-                                            <p class="card-text text-muted mb-2">Women / Track Pants</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 1,799</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ================================= KIDS' APPAREL TAB ================================= -->
-                        <div class="tab-pane fade" id="kidsTab" role="tabpanel" aria-labelledby="kids-tab">
-                            <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-kids">
-                                <button class="btn btn-outline-dark filter-type active" data-type="all"
-                                    onclick="filterType('kids', 'all')">All Kids'</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="tshirt"
-                                    onclick="filterType('kids', 'tshirt')">T-Shirts</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="shorts"
-                                    onclick="filterType('kids', 'shorts')">Shorts</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
-                                    onclick="filterType('kids', 'tracksuit')">Tracksuits</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="jersey"
-                                    onclick="filterType('kids', 'jersey')">Jersey Sets</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="jacket"
-                                    onclick="filterType('kids', 'jacket')">Jackets</button>
-                            </div>
-                            <div class="row" id="productGrid-kids">
-                                <!-- KIDS' T-SHIRT -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item kids tshirt">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/00b4d8/ffffff?text=Kids+Tee"
-                                            class="card-img-top" alt="Kids T-Shirt">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Youth Graphic Tee</h5>
-                                            <p class="card-text text-muted mb-2">Kids / T-Shirt</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 550</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- KIDS' SHORTS -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item kids shorts">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/457b9d/ffffff?text=Kids+Shorts"
-                                            class="card-img-top" alt="Kids Shorts">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Playtime Athletic Shorts</h5>
-                                            <p class="card-text text-muted mb-2">Kids / Shorts</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 499</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- KIDS' JERSEY SET -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item kids jersey">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/90be6d/000000?text=Kids+Jersey+Set"
-                                            class="card-img-top" alt="Kids Jersey Set">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Team Practice Jersey Set</h5>
-                                            <p class="card-text text-muted mb-2">Kids / Jersey Set</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 1,299</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ================================= UNISEX APPAREL TAB ================================= -->
-                        <div class="tab-pane fade" id="unisexTab" role="tabpanel" aria-labelledby="unisex-tab">
-                            <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-unisex">
-                                <button class="btn btn-outline-dark filter-type active" data-type="all"
-                                    onclick="filterType('unisex', 'all')">All Unisex</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="tshirt"
-                                    onclick="filterType('unisex', 'tshirt')">T-Shirts</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
-                                    onclick="filterType('unisex', 'tracksuit')">Tracksuits</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="trackpant"
-                                    onclick="filterType('unisex', 'trackpant')">Track Pants</button>
-                                <button class="btn btn-outline-dark filter-type" data-type="jacket"
-                                    onclick="filterType('unisex', 'jacket')">Jackets</button>
-                            </div>
-                            <div class="row" id="productGrid-unisex">
-                                <!-- UNISEX TRACKSUIT -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tracksuit">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tracksuit"
-                                            class="card-img-top" alt="Unisex Tracksuit">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Pro-Fit Full Tracksuit</h5>
-                                            <p class="card-text text-muted mb-2">Unisex / Tracksuit</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 4,500</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- UNISEX JACKET -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex jacket">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/14213d/ffffff?text=Unisex+Jacket"
-                                            class="card-img-top" alt="Unisex Rain Jacket">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Waterproof Rain Jacket</h5>
-                                            <p class="card-text text-muted mb-2">Unisex / Jacket</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 2,200</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- UNISEX TRACK PANT -->
-                                <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant">
-                                    <div class="card product-card shadow-sm">
-                                        <img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant"
-                                            class="card-img-top" alt="Unisex Track Pant">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">Warm-up Track Pants</h5>
-                                            <p class="card-text text-muted mb-2">Unisex / Track Pants</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <span class="price-text">₹ 1,599</span>
-                                                <a href="#" class="btn btn-sm btn-outline-dark"><i
-                                                        class="bi bi-cart-plus me-1"></i> Add</a>
-                                                <button class="btn btn-outline-danger btn-sm wishlist-btn">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-men">
+                    <button class="btn btn-outline-dark filter-type active" data-type="all"
+                        onclick="filterType('men', 'all')">All Men's</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="tshirt"
+                        onclick="filterType('men', 'tshirt')">T-Shirts</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="shorts"
+                        onclick="filterType('men', 'shorts')">Shorts</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
+                        onclick="filterType('men', 'tracksuit')">Tracksuits</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="trackpant"
+                        onclick="filterType('men', 'trackpant')">Track Pants</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="jersey"
+                        onclick="filterType('men', 'jersey')">Jersey Sets</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="jacket"
+                        onclick="filterType('men', 'jacket')">Jackets</button>
                 </div>
-            </section>
+
+                <div class="row" id="productGrid-men">
+                    
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+01" class="card-img-top" alt="Men's T-Shirt"><div class="card-body"><h5 class="card-title fw-bold">Dry-Fit Performance Tee</h5><p class="card-text text-muted mb-2">Men / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 899</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+02" class="card-img-top" alt="Men's Casual Tee"><div class="card-body"><h5 class="card-title fw-bold">Casual Cotton T-Shirt</h5><p class="card-text text-muted mb-2">Men / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 650</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+03" class="card-img-top" alt="Men's Compression Tee"><div class="card-body"><h5 class="card-title fw-bold">Compression Base Layer Tee</h5><p class="card-text text-muted mb-2">Men / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,199</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+04" class="card-img-top" alt="Men's V-Neck Tee"><div class="card-body"><h5 class="card-title fw-bold">Classic V-Neck Sport Tee</h5><p class="card-text text-muted mb-2">Men / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 750</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+05" class="card-img-top" alt="Men's Training Tee"><div class="card-body"><h5 class="card-title fw-bold">Seamless Training Top</h5><p class="card-text text-muted mb-2">Men / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,099</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+06" class="card-img-top" alt="Men's Polo Tee"><div class="card-body"><h5 class="card-title fw-bold">Golf Performance Polo</h5><p class="card-text text-muted mb-2">Men / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,299</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+07" class="card-img-top" alt="Men's Graphic Tee"><div class="card-body"><h5 class="card-title fw-bold">Team Graphic Logo Tee</h5><p class="card-text text-muted mb-2">Men / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 850</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+08" class="card-img-top" alt="Men's Longsleeve Tee"><div class="card-body"><h5 class="card-title fw-bold">Long Sleeve Running Top</h5><p class="card-text text-muted mb-2">Men / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,350</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+09" class="card-img-top" alt="Men's Heavyweight Tee"><div class="card-body"><h5 class="card-title fw-bold">Heavy Cotton Training Tee</h5><p class="card-text text-muted mb-2">Men / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 950</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/343a40/ffffff?text=Men's+T-Shirt+10" class="card-img-top" alt="Men's Crew Neck Tee"><div class="card-body"><h5 class="card-title fw-bold">Crew Neck Wicking T-Shirt</h5><p class="card-text text-muted mb-2">Men / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 799</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+01" class="card-img-top" alt="Men's Shorts"><div class="card-body"><h5 class="card-title fw-bold">Quick-Dry Athletic Shorts</h5><p class="card-text text-muted mb-2">Men / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,050</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+02" class="card-img-top" alt="Men's Running Shorts"><div class="card-body"><h5 class="card-title fw-bold">7-inch Running Shorts</h5><p class="card-text text-muted mb-2">Men / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 950</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+03" class="card-img-top" alt="Men's Basketball Shorts"><div class="card-body"><h5 class="card-title fw-bold">Mesh Basketball Shorts</h5><p class="card-text text-muted mb-2">Men / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,199</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+04" class="card-img-top" alt="Men's Woven Shorts"><div class="card-body"><h5 class="card-title fw-bold">Woven Training Shorts</h5><p class="card-text text-muted mb-2">Men / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 899</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+05" class="card-img-top" alt="Men's 5-inch Shorts"><div class="card-body"><h5 class="card-title fw-bold">5-inch Split-Hem Shorts</h5><p class="card-text text-muted mb-2">Men / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,150</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+06" class="card-img-top" alt="Men's Casual Shorts"><div class="card-body"><h5 class="card-title fw-bold">Lifestyle Fleece Shorts</h5><p class="card-text text-muted mb-2">Men / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,399</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+07" class="card-img-top" alt="Men's Tennis Shorts"><div class="card-body"><h5 class="card-title fw-bold">Tennis Match Shorts</h5><p class="card-text text-muted mb-2">Men / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,299</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+08" class="card-img-top" alt="Men's Shorts with Liner"><div class="card-body"><h5 class="card-title fw-bold">Running Shorts with Liner</h5><p class="card-text text-muted mb-2">Men / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,499</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+09" class="card-img-top" alt="Men's Training Shorts"><div class="card-body"><h5 class="card-title fw-bold">Lightweight Flex Shorts</h5><p class="card-text text-muted mb-2">Men / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 999</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/495057/ffffff?text=Men's+Shorts+10" class="card-img-top" alt="Men's Football Shorts"><div class="card-body"><h5 class="card-title fw-bold">Football Team Shorts</h5><p class="card-text text-muted mb-2">Men / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 799</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men tracksuit"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Tracksuit+01" class="card-img-top" alt="Men's Tracksuit"><div class="card-body"><h5 class="card-title fw-bold">Elite Training Tracksuit</h5><p class="card-text text-muted mb-2">Men / Tracksuit</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 3,999</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Track+Pant+01" class="card-img-top" alt="Men's Zipper Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Fleece Zipper Track Pants</h5><p class="card-text text-muted mb-2">Men / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,699</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Track+Pant+02" class="card-img-top" alt="Men's Training Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Woven Training Track Pants</h5><p class="card-text text-muted mb-2">Men / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,399</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Track+Pant+03" class="card-img-top" alt="Men's Mesh Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Mesh-Lined Wind Pants</h5><p class="card-text text-muted mb-2">Men / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,799</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Track+Pant+04" class="card-img-top" alt="Men's Cotton Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Heavy Cotton Joggers</h5><p class="card-text text-muted mb-2">Men / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,899</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Track+Pant+05" class="card-img-top" alt="Men's Running Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Slim-Fit Running Trackers</h5><p class="card-text text-muted mb-2">Men / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,599</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Track+Pant+06" class="card-img-top" alt="Men's Training Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Tapered Training Pants</h5><p class="card-text text-muted mb-2">Men / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,650</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Track+Pant+07" class="card-img-top" alt="Men's Casual Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Casual Fleece Bottoms</h5><p class="card-text text-muted mb-2">Men / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,450</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Track+Pant+08" class="card-img-top" alt="Men's Yoga Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Yoga & Stretch Pants</h5><p class="card-text text-muted mb-2">Men / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,299</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Track+Pant+09" class="card-img-top" alt="Men's Football Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Football Drill Track Pants</h5><p class="card-text text-muted mb-2">Men / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,999</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/212529/ffffff?text=Men's+Track+Pant+10" class="card-img-top" alt="Men's Travel Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Travel Woven Track Pants</h5><p class="card-text text-muted mb-2">Men / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,199</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men jersey"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/6c757d/ffffff?text=Men's+Jersey+Set+01" class="card-img-top" alt="Men's Cricket Jersey"><div class="card-body"><h5 class="card-title fw-bold">Cricket Team Jersey Set</h5><p class="card-text text-muted mb-2">Men / Jersey Set</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,100</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men jersey"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/6c757d/ffffff?text=Men's+Jersey+Set+02" class="card-img-top" alt="Men's Football Jersey"><div class="card-body"><h5 class="card-title fw-bold">Football Match Day Kit</h5><p class="card-text text-muted mb-2">Men / Jersey Set</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,999</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men jacket"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/6c757d/ffffff?text=Men's+Jacket+01" class="card-img-top" alt="Men's Jacket"><div class="card-body"><h5 class="card-title fw-bold">Lightweight Windbreaker</h5><p class="card-text text-muted mb-2">Men / Jacket</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,899</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item men jacket"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/6c757d/ffffff?text=Men's+Jacket+02" class="card-img-top" alt="Men's Hooded Jacket"><div class="card-body"><h5 class="card-title fw-bold">Hooded Zip-Up Jacket</h5><p class="card-text text-muted mb-2">Men / Jacket</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,499</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="womenTab" role="tabpanel" aria-labelledby="women-tab">
+                <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-women">
+                    <button class="btn btn-outline-dark filter-type active" data-type="all"
+                        onclick="filterType('women', 'all')">All Women's</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="tshirt"
+                        onclick="filterType('women', 'tshirt')">T-Shirts</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="shorts"
+                        onclick="filterType('women', 'shorts')">Shorts</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
+                        onclick="filterType('women', 'tracksuit')">Tracksuits</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="trackpant"
+                        onclick="filterType('women', 'trackpant')">Track Pants</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="jacket"
+                        onclick="filterType('women', 'jacket')">Jackets</button>
+                </div>
+                <div class="row" id="productGrid-women">
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee+01" class="card-img-top" alt="Women's Training Tee"><div class="card-body"><h5 class="card-title fw-bold">Aero-Cool Training Tee</h5><p class="card-text text-muted mb-2">Women / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 799</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee+02" class="card-img-top" alt="Women's V-Neck Tee"><div class="card-body"><h5 class="card-title fw-bold">Casual V-Neck Tee</h5><p class="card-text text-muted mb-2">Women / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 750</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee+03" class="card-img-top" alt="Women's Training Tank"><div class="card-body"><h5 class="card-title fw-bold">Sleeveless Training Tank</h5><p class="card-text text-muted mb-2">Women / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 699</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee+04" class="card-img-top" alt="Women's Crop Top"><div class="card-body"><h5 class="card-title fw-bold">Short Crop Performance Top</h5><p class="card-text text-muted mb-2">Women / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 850</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee+05" class="card-img-top" alt="Women's Graphic Tee"><div class="card-body"><h5 class="card-title fw-bold">Inspirational Graphic Tee</h5><p class="card-text text-muted mb-2">Women / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 599</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee+06" class="card-img-top" alt="Women's Loose Fit Tee"><div class="card-body"><h5 class="card-title fw-bold">Loose Fit Studio Tee</h5><p class="card-text text-muted mb-2">Women / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 799</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee+07" class="card-img-top" alt="Women's Longline Tee"><div class="card-body"><h5 class="card-title fw-bold">Longline Wicking T-Shirt</h5><p class="card-text text-muted mb-2">Women / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 950</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee+08" class="card-img-top" alt="Women's Compression Top"><div class="card-body"><h5 class="card-title fw-bold">Short Sleeve Compression Top</h5><p class="card-text text-muted mb-2">Women / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,199</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee+09" class="card-img-top" alt="Women's Sleeveless Tee"><div class="card-body"><h5 class="card-title fw-bold">Performance Sleeveless Top</h5><p class="card-text text-muted mb-2">Women / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 650</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/e63946/ffffff?text=Women's+Tee+10" class="card-img-top" alt="Women's Dry Fit Tee"><div class="card-body"><h5 class="card-title fw-bold">Ultra-Soft Dry-Fit Tee</h5><p class="card-text text-muted mb-2">Women / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 899</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts+01" class="card-img-top" alt="Women's Shorts"><div class="card-body"><h5 class="card-title fw-bold">Running Flow Shorts</h5><p class="card-text text-muted mb-2">Women / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 950</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts+02" class="card-img-top" alt="Women's Biker Shorts"><div class="card-body"><h5 class="card-title fw-bold">High-Waist Biker Shorts</h5><p class="card-text text-muted mb-2">Women / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,199</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts+03" class="card-img-top" alt="Women's Skort"><div class="card-body"><h5 class="card-title fw-bold">Tennis/Badminton Skort</h5><p class="card-text text-muted mb-2">Women / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,450</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts+04" class="card-img-top" alt="Women's 3-inch Shorts"><div class="card-body"><h5 class="card-title fw-bold">3-inch Race Shorts</h5><p class="card-text text-muted mb-2">Women / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 899</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts+05" class="card-img-top" alt="Women's Training Shorts"><div class="card-body"><h5 class="card-title fw-bold">Training Woven Shorts</h5><p class="card-text text-muted mb-2">Women / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,099</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts+06" class="card-img-top" alt="Women's Volleyball Shorts"><div class="card-body"><h5 class="card-title fw-bold">Spandex Volleyball Shorts</h5><p class="card-text text-muted mb-2">Women / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 650</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts+07" class="card-img-top" alt="Women's Compression Shorts"><div class="card-body"><h5 class="card-title fw-bold">8-inch Compression Shorts</h5><p class="card-text text-muted mb-2">Women / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,399</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts+08" class="card-img-top" alt="Women's Casual Shorts"><div class="card-body"><h5 class="card-title fw-bold">Casual Fleece Lounge Shorts</h5><p class="card-text text-muted mb-2">Women / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,250</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts+09" class="card-img-top" alt="Women's Drawstring Shorts"><div class="card-body"><h5 class="card-title fw-bold">Drawstring Waist Shorts</h5><p class="card-text text-muted mb-2">Women / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 999</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/fca311/000000?text=Women's+Shorts+10" class="card-img-top" alt="Women's Track Shorts"><div class="card-body"><h5 class="card-title fw-bold">Light Track Shorts</h5><p class="card-text text-muted mb-2">Women / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 850</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women tracksuit"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Tracksuit+01" class="card-img-top" alt="Women's Performance Tracksuit"><div class="card-body"><h5 class="card-title fw-bold">Performance Tracksuit Set</h5><p class="card-text text-muted mb-2">Women / Tracksuit</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 3,500</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant+01" class="card-img-top" alt="Women's Track Pants"><div class="card-body"><h5 class="card-title fw-bold">Cuffed Lifestyle Joggers</h5><p class="card-text text-muted mb-2">Women / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,799</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant+02" class="card-img-top" alt="Women's Lifestyle Joggers"><div class="card-body"><h5 class="card-title fw-bold">Soft Knit Jogger Pants</h5><p class="card-text text-muted mb-2">Women / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,599</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant+03" class="card-img-top" alt="Women's Training Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Tapered Training Track Pants</h5><p class="card-text text-muted mb-2">Women / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,899</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant+04" class="card-img-top" alt="Women's Running Tights"><div class="card-body"><h5 class="card-title fw-bold">High-Waist Running Tights</h5><p class="card-text text-muted mb-2">Women / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,199</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant+05" class="card-img-top" alt="Women's Flare Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Flare Hem Studio Pants</h5><p class="card-text text-muted mb-2">Women / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,650</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant+06" class="card-img-top" alt="Women's Fleece Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Thick Fleece Joggers</h5><p class="card-text text-muted mb-2">Women / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,999</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant+07" class="card-img-top" alt="Women's Woven Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Lightweight Woven Trackers</h5><p class="card-text text-muted mb-2">Women / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,499</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant+08" class="card-img-top" alt="Women's Yoga Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Seamless Yoga Leggings</h5><p class="card-text text-muted mb-2">Women / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,299</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant+09" class="card-img-top" alt="Women's Capri Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Capri Length Running Pants</h5><p class="card-text text-muted mb-2">Women / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,350</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Track+Pant+10" class="card-img-top" alt="Women's Slim Fit Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Slim-Fit Track Joggers</h5><p class="card-text text-muted mb-2">Women / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,750</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women jacket"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Padded" class="card-img-top" alt="Women's Padded Jacket"><div class="card-body"><h5 class="card-title fw-bold">Thermal Padded Jacket</h5><p class="card-text text-muted mb-2">Women / Jacket</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,800</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item women jacket"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/003566/ffffff?text=Women's+Light+Jacket" class="card-img-top" alt="Women's Lightweight Jacket"><div class="card-body"><h5 class="card-title fw-bold">Hooded Mesh Jacket</h5><p class="card-text text-muted mb-2">Women / Jacket</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,999</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="kidsTab" role="tabpanel" aria-labelledby="kids-tab">
+                <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-kids">
+                    <button class="btn btn-outline-dark filter-type active" data-type="all"
+                        onclick="filterType('kids', 'all')">All Kids'</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="tshirt"
+                        onclick="filterType('kids', 'tshirt')">T-Shirts</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="shorts"
+                        onclick="filterType('kids', 'shorts')">Shorts</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
+                        onclick="filterType('kids', 'tracksuit')">Tracksuits</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="jersey"
+                        onclick="filterType('kids', 'jersey')">Jersey Sets</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="jacket"
+                        onclick="filterType('kids', 'jacket')">Jackets</button>
+                </div>
+                <div class="row" id="productGrid-kids">
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item kids tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/00b4d8/ffffff?text=Kids+Tee" class="card-img-top" alt="Kids T-Shirt"><div class="card-body"><h5 class="card-title fw-bold">Youth Graphic Tee</h5><p class="card-text text-muted mb-2">Kids / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 550</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item kids tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/00b4d8/ffffff?text=Kids+Polo" class="card-img-top" alt="Kids Polo Shirt"><div class="card-body"><h5 class="card-title fw-bold">Kids Sport Polo Shirt</h5><p class="card-text text-muted mb-2">Kids / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 799</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item kids tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/00b4d8/ffffff?text=Kids+Round+Neck" class="card-img-top" alt="Kids Round Neck Tee"><div class="card-body"><h5 class="card-title fw-bold">Quick Dry Round Neck Tee</h5><p class="card-text text-muted mb-2">Kids / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 650</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item kids shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/457b9d/ffffff?text=Kids+Shorts" class="card-img-top" alt="Kids Shorts"><div class="card-body"><h5 class="card-title fw-bold">Playtime Athletic Shorts</h5><p class="card-text text-muted mb-2">Kids / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 499</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item kids shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/457b9d/ffffff?text=Kids+Knee+Length" class="card-img-top" alt="Kids Knee Length Shorts"><div class="card-body"><h5 class="card-title fw-bold">Knee-Length Active Shorts</h5><p class="card-text text-muted mb-2">Kids / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 599</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item kids shorts"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/457b9d/ffffff?text=Kids+Bermuda" class="card-img-top" alt="Kids Bermuda Shorts"><div class="card-body"><h5 class="card-title fw-bold">Casual Bermuda Shorts</h5><p class="card-text text-muted mb-2">Kids / Shorts</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 450</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item kids tracksuit"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/90be6d/000000?text=Kids+Tracksuit+Set" class="card-img-top" alt="Kids Tracksuit"><div class="card-body"><h5 class="card-title fw-bold">Warm-Up Tracksuit Set</h5><p class="card-text text-muted mb-2">Kids / Tracksuit</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,199</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item kids jersey"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/90be6d/000000?text=Kids+Jersey+Set" class="card-img-top" alt="Kids Jersey Set"><div class="card-body"><h5 class="card-title fw-bold">Team Practice Jersey Set</h5><p class="card-text text-muted mb-2">Kids / Jersey Set</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,299</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item kids jersey"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/90be6d/000000?text=Kids+Football+Kit" class="card-img-top" alt="Kids Football Kit"><div class="card-body"><h5 class="card-title fw-bold">Football Kit (Jersey + Shorts)</h5><p class="card-text text-muted mb-2">Kids / Jersey Set</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 999</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item kids jersey"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/90be6d/000000?text=Kids+Basketball+Kit" class="card-img-top" alt="Kids Basketball Kit"><div class="card-body"><h5 class="card-title fw-bold">Basketball Reversible Set</h5><p class="card-text text-muted mb-2">Kids / Jersey Set</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,199</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item kids jacket"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/90be6d/000000?text=Kids+Jacket" class="card-img-top" alt="Kids Fleece Jacket"><div class="card-body"><h5 class="card-title fw-bold">Light Fleece Zip Jacket</h5><p class="card-text text-muted mb-2">Kids / Jacket</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,599</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="unisexTab" role="tabpanel" aria-labelledby="unisex-tab">
+                <div class="d-flex justify-content-center mb-4 flex-wrap" id="secondaryFilter-unisex">
+                    <button class="btn btn-outline-dark filter-type active" data-type="all"
+                        onclick="filterType('unisex', 'all')">All Unisex</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="tshirt"
+                        onclick="filterType('unisex', 'tshirt')">T-Shirts</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="tracksuit"
+                        onclick="filterType('unisex', 'tracksuit')">Tracksuits</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="trackpant"
+                        onclick="filterType('unisex', 'trackpant')">Track Pants</button>
+                    <button class="btn btn-outline-dark filter-type" data-type="jacket"
+                        onclick="filterType('unisex', 'jacket')">Jackets</button>
+                </div>
+                <div class="row" id="productGrid-unisex">
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tee+01" class="card-img-top" alt="Unisex Basic T-Shirt"><div class="card-body"><h5 class="card-title fw-bold">Basic Cotton Crewneck</h5><p class="card-text text-muted mb-2">Unisex / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 499</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tee+02" class="card-img-top" alt="Unisex Long Sleeve Tee"><div class="card-body"><h5 class="card-title fw-bold">Long Sleeve Base Layer</h5><p class="card-text text-muted mb-2">Unisex / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 999</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tee+03" class="card-img-top" alt="Unisex Graphic Tee"><div class="card-body"><h5 class="card-title fw-bold">Logo Graphic T-Shirt</h5><p class="card-text text-muted mb-2">Unisex / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 799</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tee+04" class="card-img-top" alt="Unisex Dry-Fit Tee"><div class="card-body"><h5 class="card-title fw-bold">Unisex Dry-Fit Tee</h5><p class="card-text text-muted mb-2">Unisex / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 699</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tee+05" class="card-img-top" alt="Unisex Performance Tee"><div class="card-body"><h5 class="card-title fw-bold">High Performance Crew</h5><p class="card-text text-muted mb-2">Unisex / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,099</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tee+06" class="card-img-top" alt="Unisex Soft-Touch Tee"><div class="card-body"><h5 class="card-title fw-bold">Soft-Touch Organic Tee</h5><p class="card-text text-muted mb-2">Unisex / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 850</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tee+07" class="card-img-top" alt="Unisex V-Neck Tee"><div class="card-body"><h5 class="card-title fw-bold">Casual V-Neck Tee</h5><p class="card-text text-muted mb-2">Unisex / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 750</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tee+08" class="card-img-top" alt="Unisex Mesh Tee"><div class="card-body"><h5 class="card-title fw-bold">Mesh Training Top</h5><p class="card-text text-muted mb-2">Unisex / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 899</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tee+09" class="card-img-top" alt="Unisex Polo Tee"><div class="card-body"><h5 class="card-title fw-bold">Classic Unisex Polo</h5><p class="card-text text-muted mb-2">Unisex / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,199</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tshirt"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tee+10" class="card-img-top" alt="Unisex Slim Fit Tee"><div class="card-body"><h5 class="card-title fw-bold">Slim Fit Cotton Tee</h5><p class="card-text text-muted mb-2">Unisex / T-Shirt</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 650</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tracksuit"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/000000/ffffff?text=Unisex+Tracksuit+01" class="card-img-top" alt="Unisex Tracksuit"><div class="card-body"><h5 class="card-title fw-bold">Pro-Fit Full Tracksuit</h5><p class="card-text text-muted mb-2">Unisex / Tracksuit</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 4,500</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tracksuit"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/14213d/ffffff?text=Unisex+Travel+Suit" class="card-img-top" alt="Unisex Travel Tracksuit"><div class="card-body"><h5 class="card-title fw-bold">Travel Knit Tracksuit</h5><p class="card-text text-muted mb-2">Unisex / Tracksuit</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 3,999</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex tracksuit"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/14213d/ffffff?text=Unisex+Warmup" class="card-img-top" alt="Unisex Warmup Suit"><div class="card-body"><h5 class="card-title fw-bold">Woven Warm-Up Suit</h5><p class="card-text text-muted mb-2">Unisex / Tracksuit</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 3,299</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant+01" class="card-img-top" alt="Unisex Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Warm-up Track Pants</h5><p class="card-text text-muted mb-2">Unisex / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,599</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant+02" class="card-img-top" alt="Unisex Joggers"><div class="card-body"><h5 class="card-title fw-bold">Fleece Comfort Joggers</h5><p class="card-text text-muted mb-2">Unisex / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,799</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant+03" class="card-img-top" alt="Unisex Athletic Pants"><div class="card-body"><h5 class="card-title fw-bold">Slim-Fit Athletic Pants</h5><p class="card-text text-muted mb-2">Unisex / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,499</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant+04" class="card-img-top" alt="Unisex Cargo Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Woven Cargo Track Pants</h5><p class="card-text text-muted mb-2">Unisex / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,199</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant+05" class="card-img-top" alt="Unisex Tapered Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Tapered Knit Track Pants</h5><p class="card-text text-muted mb-2">Unisex / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,699</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant+06" class="card-img-top" alt="Unisex Waterproof Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Waterproof Rain Pants</h5><p class="card-text text-muted mb-2">Unisex / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,499</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant+07" class="card-img-top" alt="Unisex Lounge Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Ribbed Cuff Lounge Joggers</h5><p class="card-text text-muted mb-2">Unisex / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,399</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant+08" class="card-img-top" alt="Unisex Compression Pant"><div class="card-body"><h5 class="card-title fw-bold">Full Length Compression Pants</h5><p class="card-text text-muted mb-2">Unisex / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,299</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant+09" class="card-img-top" alt="Unisex Hybrid Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Hybrid Outdoor Track Pants</h5><p class="card-text text-muted mb-2">Unisex / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,099</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex trackpant"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/9d0208/ffffff?text=Unisex+Track+Pant+10" class="card-img-top" alt="Unisex Fleece Track Pant"><div class="card-body"><h5 class="card-title fw-bold">Heavy GSM Fleece Pants</h5><p class="card-text text-muted mb-2">Unisex / Track Pants</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 1,899</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex jacket"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/14213d/ffffff?text=Unisex+Jacket" class="card-img-top" alt="Unisex Rain Jacket"><div class="card-body"><h5 class="card-title fw-bold">Waterproof Rain Jacket</h5><p class="card-text text-muted mb-2">Unisex / Jacket</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,200</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 product-item unisex jacket"><div class="card product-card shadow-sm"><img src="https://placehold.co/600x400/14213d/ffffff?text=Unisex+Hoodie" class="card-img-top" alt="Unisex Pullover Hoodie"><div class="card-body"><h5 class="card-title fw-bold">Heavyweight Pullover Hoodie</h5><p class="card-text text-muted mb-2">Unisex / Jacket</p><div class="d-flex justify-content-between align-items-center"><span class="price-text">₹ 2,799</span><a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-cart-plus me-1"></i> Add</a><button class="btn btn-outline-danger btn-sm wishlist-btn"><i class="fa-regular fa-heart"></i></button></div></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
@@ -680,91 +551,85 @@
             </section>
 
 
+ <footer class="bg-dark text-white pt-4">
 
-            <footer class="bg-dark text-white pt-4">
+    <div class="container-fluid bg-dark text-center border-bottom border-secondary py-3">
+      <div class="row">
+        <div class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center">
+          <i class="bi bi-truck me-2"></i> Free shipping on orders above Rs. 999
+        </div>
+        <div
+          class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center border-start border-end border-secondary">
+          <i class="bi bi-wallet me-2"></i> Cash On Delivery
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <i class="bi bi-arrow-return-left me-2"></i> Return policy (Upto 7 days)
+        </div>
+      </div>
+    </div>
 
-                <div class="container-fluid bg-dark text-center border-bottom border-secondary py-3">
-                    <div class="row">
-                        <div class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center">
-                            <i class="bi bi-truck me-2"></i> Free shipping on orders above Rs. 999
-                        </div>
-                        <div
-                            class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center border-start border-end border-secondary">
-                            <i class="bi bi-wallet me-2"></i> Cash On Delivery
-                        </div>
-                        <div class="col-md-4 d-flex align-items-center justify-content-center">
-                            <i class="bi bi-arrow-return-left me-2"></i> Return policy (Upto 7 days)
-                        </div>
-                    </div>
-                </div>
+    <div class="container-fluid py-5 footer-main-content position-relative">
 
-                <div class="container-fluid py-5 footer-main-content position-relative">
+      <div class="footer-bg-image"></div>
 
-                    <div class="footer-bg-image"></div>
+      <div class="container position-relative z-1">
+        <div class="row">
 
-                    <div class="container position-relative z-1">
-                        <div class="row">
+          <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+            <h5 class="text-uppercase mb-3">COMPANY</h5>
+            <ul class="list-unstyled">
+              <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+              <li><a href="about-us.html" class="text-white text-decoration-none">Contact Us</a></li>
+              <li><a href="blog.html" class="text-white text-decoration-none">Blogs</a></li>
+              <li><a href="trackorder.html" class="text-white text-decoration-none">track your order</a></li>
+              <li><a href="compliance.html" class="text-white text-decoration-none">Compliance</a></li>
+              <li><a href="terms.html" class="text-white text-decoration-none">Terms And Conditions</a></li>
+              <li><a href="privacy.html" class="text-white text-decoration-none">Privacy Policy</a></li>
+              <li><a href="refund.html" class="text-white text-decoration-none">Refund Policy</a></li>
+            </ul>
+          </div>
 
-                            <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
-                                <h5 class="text-uppercase mb-3">COMPANY</h5>
-                                <ul class="list-unstyled">
-                                    <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
-                                    <li><a href="about-us.html" class="text-white text-decoration-none">Contact Us</a>
-                                    </li>
-                                    <li><a href="blog.html" class="text-white text-decoration-none">Blogs</a></li>
-                                    <li><a href="#" class="text-white text-decoration-none">Catalogues</a></li>
-                                    <li><a href="#" class="text-white text-decoration-none">Compliance</a></li>
-                                    <li><a href="terms.html" class="text-white text-decoration-none">Terms And
-                                            Conditions</a></li>
-                                    <li><a href="privacy.html" class="text-white text-decoration-none">Privacy
-                                            Policy</a></li>
-                                    <li><a href="refund.html" class="text-white text-decoration-none">Refund Policy</a>
-                                    </li>
-                                </ul>
-                            </div>
+          <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+            <h5 class="text-uppercase mb-3">SPIKEIT</h5>
+            <ul class="list-unstyled">
+              <li><a href="aiff.html" class="text-white text-decoration-none">AIFF</a></li>
+              <li><a href="isl.html" class="text-white text-decoration-none">ISL</a></li>
+              <li><a href="laliga.html" class="text-white text-decoration-none">LA LIGA</a></li>
+              <li><a href="pl.html" class="text-white text-decoration-none">PREMIER LEAGUE</a>
+              </li>
+              <li><a href="uefa.html" class="text-white text-decoration-none">UCL</a></li>
+             
+            </ul>
+          </div>
 
-                            <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
-                                <h5 class="text-uppercase mb-3">SPIKEIT</h5>
-                                <ul class="list-unstyled">
-                                    <li><a href="#" class="text-white text-decoration-none">AIFF</a></li>
-                                    <li><a href="#" class="text-white text-decoration-none">ISL</a></li>
-                                    <li><a href="#" class="text-white text-decoration-none">Bhutan Football
-                                            Federation</a></li>
-                                    <li><a href="#" class="text-white text-decoration-none">Srilankan Football
-                                            Federation</a>
-                                    </li>
-                                    <li><a href="#" class="text-white text-decoration-none">BFI</a></li>
-                                    <li><a href="#" class="text-white text-decoration-none">VFI</a></li>
-                                </ul>
-                            </div>
+          <div class="col-lg-4 col-md-4">
+            <h5 class="text-uppercase mb-3">CONNECT WITH US</h5>
+            <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 7012056376</p>
+            <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> ahamedansarnasim@gmail.com</p>
+            <p class="mb-1"><i class="bi bi-clock-fill me-2"></i> 9AM - 6PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                            <div class="col-lg-4 col-md-4">
-                                <h5 class="text-uppercase mb-3">CONNECT WITH US</h5>
-                                <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 7012056376</p>
-                                <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> ahamedansarnasim@gmail.com</p>
-                                <p class="mb-1"><i class="bi bi-clock-fill me-2"></i> 9AM - 6PM</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container-fluid text-center border-top border-secondary py-3">
-                    <div class="row d-flex align-items-center justify-content-between">
-                        <div class="col-md-4 text-start">
-                            &copy; 2025 SPIKEIT
-                        </div>
-                        <div class="col-md-4 text-center">
-                            Design Partners: Intent Global
-                        </div>
-                        <div class="col-md-4 text-end social-icons">
-                            <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
-                            <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
-                            <a href="#" class="text-white me-3"><i class="bi bi-twitter-x fs-5"></i></a>
-                            <a href="#" class="text-white"><i class="bi bi-youtube fs-5"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+    <div class="container-fluid text-center border-top border-secondary py-3">
+      <div class="row d-flex align-items-center justify-content-between">
+        <div class="col-md-4 text-start">
+          Design Partners: AHAMED ANSAR
+        </div>
+        <div class="col-md-4 text-center">
+         
+           &copy; 2025 SPIKEIT
+        </div>
+        <div class="col-md-4 text-end social-icons">
+          <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-twitter-x fs-5"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-youtube fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
             <!-- Bootstrap JS -->
 

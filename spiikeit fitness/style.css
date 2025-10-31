@@ -686,6 +686,7 @@ body { padding-top: calc(var(--offers-height) + 60px); }
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
+  height: 100px;
 }
 .product-card:hover {
   transform: translateY(-6px);

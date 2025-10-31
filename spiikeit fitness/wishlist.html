@@ -12,46 +12,105 @@
   <link rel="stylesheet" href="/spiikeit fitness/style.css">
 
   <style>
-    body {
-      background: #f9f9f9;
-      font-family: 'Poppins', sans-serif;
-    }
-   
-    .wishlist-card {
-      transition: 0.3s;
-      width: 300px;
-    }
-    .wishlist-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
+   /* --- Wishlist Modern Look (no HTML change needed) --- */
+#wishlistContainer {
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
 
-    .wishlist-card img {
+#wishlistContainer .card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+}
+
+#wishlistContainer .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+#wishlistContainer img {
   width: 100%;
   height: 220px;
-  object-fit: contain;
-  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.wishlist-card {
-  border-radius: 10px;
-  overflow: hidden;
-  transition: 0.3s;
-  background: white;
+#wishlistContainer .card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
 }
 
-.product-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+#wishlistContainer .card-body {
+  text-align: center;
+  padding: 1.2rem;
 }
 
+#wishlistContainer .card-body h6 {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+  color: #212529;
+}
 
-    .btn {
-      border-radius: 25px;
-    }
+#wishlistContainer .card-body p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Buttons */
+#wishlistContainer .btn {
+  border-radius: 25px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  padding: 6px 14px;
+}
+
+#wishlistContainer .btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: #fff;
+  transform: scale(1.03);
+}
+
+#wishlistContainer .btn-dark:hover {
+  background: linear-gradient(45deg, #111, #333);
+  transform: scale(1.03);
+}
+
+/* Empty Wishlist */
+.empty-message {
+  text-align: center;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 5rem auto;
+  max-width: 420px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.empty-message h4 {
+  font-weight: 600;
+  color: #333;
+}
+
+.empty-message .btn {
+  border-radius: 25px;
+  padding: 10px 24px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #wishlistContainer img {
+    height: 180px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -126,7 +185,7 @@
 
   <!-- Wishlist Section -->
 <section class="container my-5">
-  <h2 class="fw-bold mb-4 text-center">❤️ Your Wishlist</h2>
+  
   <div id="wishlistContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
     <!-- Wishlist cards injected by JS -->
   </div>
@@ -164,84 +223,85 @@
 
 
     <!-- footer -->
-    <footer class="bg-dark text-white pt-4">
+     <footer class="bg-dark text-white pt-4">
 
-        <div class="container-fluid bg-dark text-center border-bottom border-secondary py-3">
-            <div class="row">
-                <div class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-truck me-2"></i> Free shipping on orders above Rs. 999
-                </div>
-                <div
-                    class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center border-start border-end border-secondary">
-                    <i class="bi bi-wallet me-2"></i> Cash On Delivery
-                </div>
-                <div class="col-md-4 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-arrow-return-left me-2"></i> Return policy (Upto 7 days)
-                </div>
-            </div>
+    <div class="container-fluid bg-dark text-center border-bottom border-secondary py-3">
+      <div class="row">
+        <div class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center">
+          <i class="bi bi-truck me-2"></i> Free shipping on orders above Rs. 999
         </div>
-
-        <div class="container-fluid py-5 footer-main-content position-relative">
-
-            <div class="footer-bg-image"></div>
-
-            <div class="container position-relative z-1">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
-                        <h5 class="text-uppercase mb-3">COMPANY</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Blogs</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Catalogues</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Compliance</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Terms And Conditions</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Refund Policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
-                        <h5 class="text-uppercase mb-3">SPIKEIT</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white text-decoration-none">AIFF</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">ISL</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Bhutan Football Federation</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Srilankan Football Federation</a>
-                            </li>
-                            <li><a href="#" class="text-white text-decoration-none">BFI</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">VFI</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4">
-                        <h5 class="text-uppercase mb-3">CONNECT WITH US</h5>
-                        <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 7012056376</p>
-                        <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> ahamedansarnasim@gmail.com</p>
-                        <p class="mb-1"><i class="bi bi-clock-fill me-2"></i> 9AM - 6PM</p>
-                    </div>
-                </div>
-            </div>
+        <div
+          class="col-md-4 mb-2 mb-md-0 d-flex align-items-center justify-content-center border-start border-end border-secondary">
+          <i class="bi bi-wallet me-2"></i> Cash On Delivery
         </div>
-
-        <div class="container-fluid text-center border-top border-secondary py-3">
-            <div class="row d-flex align-items-center justify-content-between">
-                <div class="col-md-4 text-start">
-                    &copy; 2025 SPIKEIT
-                </div>
-                <div class="col-md-4 text-center">
-                    Design Partners: Intent Global
-                </div>
-                <div class="col-md-4 text-end social-icons">
-                    <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
-                    <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
-                    <a href="#" class="text-white me-3"><i class="bi bi-twitter-x fs-5"></i></a>
-                    <a href="#" class="text-white"><i class="bi bi-youtube fs-5"></i></a>
-                </div>
-            </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <i class="bi bi-arrow-return-left me-2"></i> Return policy (Upto 7 days)
         </div>
-    </footer>
+      </div>
+    </div>
+
+    <div class="container-fluid py-5 footer-main-content position-relative">
+
+      <div class="footer-bg-image"></div>
+
+      <div class="container position-relative z-1">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+            <h5 class="text-uppercase mb-3">COMPANY</h5>
+            <ul class="list-unstyled">
+              <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+              <li><a href="about-us.html" class="text-white text-decoration-none">Contact Us</a></li>
+              <li><a href="blog.html" class="text-white text-decoration-none">Blogs</a></li>
+              <li><a href="trackorder.html" class="text-white text-decoration-none">track your order</a></li>
+              <li><a href="compliance.html" class="text-white text-decoration-none">Compliance</a></li>
+              <li><a href="terms.html" class="text-white text-decoration-none">Terms And Conditions</a></li>
+              <li><a href="privacy.html" class="text-white text-decoration-none">Privacy Policy</a></li>
+              <li><a href="refund.html" class="text-white text-decoration-none">Refund Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+            <h5 class="text-uppercase mb-3">SPIKEIT</h5>
+            <ul class="list-unstyled">
+              <li><a href="aiff.html" class="text-white text-decoration-none">AIFF</a></li>
+              <li><a href="isl.html" class="text-white text-decoration-none">ISL</a></li>
+              <li><a href="laliga.html" class="text-white text-decoration-none">LA LIGA</a></li>
+              <li><a href="pl.html" class="text-white text-decoration-none">PREMIER LEAGUE</a>
+              </li>
+              <li><a href="uefa.html" class="text-white text-decoration-none">UCL</a></li>
+             
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-4">
+            <h5 class="text-uppercase mb-3">CONNECT WITH US</h5>
+            <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i> +91 7012056376</p>
+            <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i> ahamedansarnasim@gmail.com</p>
+            <p class="mb-1"><i class="bi bi-clock-fill me-2"></i> 9AM - 6PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid text-center border-top border-secondary py-3">
+      <div class="row d-flex align-items-center justify-content-between">
+        <div class="col-md-4 text-start">
+          Design Partners: AHAMED ANSAR
+        </div>
+        <div class="col-md-4 text-center">
+         
+           &copy; 2025 SPIKEIT
+        </div>
+        <div class="col-md-4 text-end social-icons">
+          <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-twitter-x fs-5"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-youtube fs-5"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Wishlist Script -->
  <script>
